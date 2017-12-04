@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://yoursite.com/2017/06/13/%E6%8C%A5%E6%8C%A5%E6%89%8B/</loc>
     <lastmod>2017-12-01T09:03:47.000Z</lastmod>
@@ -22,7 +23,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://yoursite.com/2017/10/11/Learning-PyTorch-With-Examples/</loc>
@@ -576,26 +576,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/11/15/%E8%BF%99%E5%87%A0%E5%A4%A9%E7%9A%84%E4%BA%91%E5%A4%A7/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>这几天的云大</title>
-        <pubTime>2017-11-15T04:14:44.000Z</pubTime>
-        
-        <tag>云大</tag>
-         
-         
-           
-             
-              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/11/18/SemEval2017%E5%89%8D%E5%87%A0%E5%90%8D%E6%80%9D%E8%B7%AF%E4%B8%8E%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
@@ -609,6 +589,26 @@
            
              
               <breadCrumb title="深度学习" url="http://yoursite.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/11/15/%E8%BF%99%E5%87%A0%E5%A4%A9%E7%9A%84%E4%BA%91%E5%A4%A7/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>这几天的云大</title>
+        <pubTime>2017-11-15T04:14:44.000Z</pubTime>
+        
+        <tag>云大</tag>
+         
+         
+           
+             
+              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
           
         </display>
     </data>
