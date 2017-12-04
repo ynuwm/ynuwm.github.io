@@ -1,0 +1,1294 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="神经网络,CNN,RNN,LSTM," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="王敏的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="添加层 def add_layer()在 Tensorflow 里定义一个添加层的函数可以很容易的添加神经层,为之后的添加省下不少时间. 神经层里常见的参数通常有weights、biases和激励函数。 定义添加神经层的函数 $def add_layer()$ ,它有四个参数：输入值、输入的大小、输出的大小和激励函数，我们设定默认的激励函数是 $None$1def add_layer(inputs">
+<meta name="keywords" content="神经网络,CNN,RNN,LSTM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tensorflow之神经网络(二)">
+<meta property="og:url" content="http://yoursite.com/2017/05/27/tensorflow之神经网络二/index.html">
+<meta property="og:site_name" content="王敏的博客">
+<meta property="og:description" content="添加层 def add_layer()在 Tensorflow 里定义一个添加层的函数可以很容易的添加神经层,为之后的添加省下不少时间. 神经层里常见的参数通常有weights、biases和激励函数。 定义添加神经层的函数 $def add_layer()$ ,它有四个参数：输入值、输入的大小、输出的大小和激励函数，我们设定默认的激励函数是 $None$1def add_layer(inputs">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/tensorflow之神经网络二/1010.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/tensorflow之神经网络二/1011.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/tensorflow之神经网络二/000.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/tensorflow之神经网络二/001.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/tensorflow之神经网络二/002.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/tensorflow之神经网络二/002.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/tensorflow之神经网络二/003.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/tensorflow之神经网络二/004.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/tensorflow之神经网络二/005.png">
+<meta property="og:updated_time" content="2017-06-24T03:15:02.705Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="tensorflow之神经网络(二)">
+<meta name="twitter:description" content="添加层 def add_layer()在 Tensorflow 里定义一个添加层的函数可以很容易的添加神经层,为之后的添加省下不少时间. 神经层里常见的参数通常有weights、biases和激励函数。 定义添加神经层的函数 $def add_layer()$ ,它有四个参数：输入值、输入的大小、输出的大小和激励函数，我们设定默认的激励函数是 $None$1def add_layer(inputs">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/27/tensorflow之神经网络二/1010.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/27/tensorflow之神经网络二/"/>
+
+
+
+
+
+  <title>tensorflow之神经网络(二) | 王敏的博客</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王敏的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">按照自己的方式去度过人生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/27/tensorflow之神经网络二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王敏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/000.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                tensorflow之神经网络(二)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-27T11:09:44+08:00">
+                2017-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TensorFlow/" itemprop="url" rel="index">
+                    <span itemprop="name">TensorFlow</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/05/27/tensorflow之神经网络二/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/05/27/tensorflow之神经网络二/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="添加层-def-add-layer"><a href="#添加层-def-add-layer" class="headerlink" title="添加层 def add_layer()"></a>添加层 def add_layer()</h1><p>在 Tensorflow 里定义一个添加层的函数可以很容易的添加神经层,为之后的添加省下不少时间.</p>
+<p>神经层里常见的参数通常有weights、biases和激励函数。</p>
+<p>定义添加神经层的函数 $def add_layer()$ ,它有四个参数：输入值、输入的大小、输出的大小和激励函数，我们设定默认的激励函数是 $None$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">def add_layer(inputs, in_size, out_size, activation_function=None):</div></pre></td></tr></table></figure></p>
+<p>接下来定义 $weights$ 和 $biases$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Weights = tf.Variable(tf.random_normal([in_size, out_size]))</div></pre></td></tr></table></figure></p>
+<p>在机器学习中，biases的推荐值不为0，这里是在0向量的基础上又加了0.1。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">biases = tf.Variable(tf.zeros([1, out_size]) + 0.1)</div></pre></td></tr></table></figure></p>
+<p>下面定义Wx_plus_b, 即神经网络未激活的值。其中，tf.matmul()是矩阵的乘法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Wx_plus_b = tf.matmul(inputs, Weights) + biases</div></pre></td></tr></table></figure></p>
+<p>当 $activation_function$ ——激励函数为 $None$ 时，输出就是当前的预测值—— $Wx_plus_b$ , 不为 $None$ 时，就把$Wx_plus_b$ 传到 $activation_function()$ 函数中得到输出。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if activation_function is None:</div><div class="line">        outputs = Wx_plus_b</div><div class="line">    else:</div><div class="line">        outputs = activation_function(Wx_plus_b)</div></pre></td></tr></table></figure></p>
+<p>最后，返回输出，添加一个神经层的函数—— $def add_layer()$ 就定义好了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return outputs</div></pre></td></tr></table></figure></p>
+<p>完整代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">from __future__ import print_function</div><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line"></div><div class="line">def add_layer(inputs, in_size, out_size, activation_function=None):</div><div class="line">    Weights = tf.Variable(tf.random_normal([in_size, out_size]))</div><div class="line">    biases = tf.Variable(tf.zeros([1, out_size]) + 0.1)</div><div class="line">    Wx_plus_b = tf.matmul(inputs, Weights) + biases</div><div class="line">    if activation_function is None:</div><div class="line">        outputs = Wx_plus_b</div><div class="line">    else:</div><div class="line">        outputs = activation_function(Wx_plus_b)</div><div class="line">    return outputs</div></pre></td></tr></table></figure></p>
+<h1 id="构造神经网络"><a href="#构造神经网络" class="headerlink" title="构造神经网络"></a>构造神经网络</h1><p>构造添加一个神经层的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">from __future__ import print_function</div><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line"></div><div class="line">def add_layer(inputs, in_size, out_size, activation_function=None):</div><div class="line">    Weights = tf.Variable(tf.random_normal([in_size, out_size]))</div><div class="line">    biases = tf.Variable(tf.zeros([1, out_size]) + 0.1)</div><div class="line">    Wx_plus_b = tf.matmul(inputs, Weights) + biases</div><div class="line">    if activation_function is None:</div><div class="line">        outputs = Wx_plus_b</div><div class="line">    else:</div><div class="line">        outputs = activation_function(Wx_plus_b)</div><div class="line">    return outputs</div></pre></td></tr></table></figure></p>
+<p>构建所需的数据。 这里的 $x_data$ 和 $y_data$ 并不是严格的一元二次函数的关系，因为我们多加了一个 $noise$ ,这样看起来会更像真实情况。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x_data = np.linspace(-1,1,300, dtype=np.float32)[:, np.newaxis]</div><div class="line">noise = np.random.normal(0, 0.05, x_data.shape).astype(np.float32)</div><div class="line">y_data = np.square(x_data) - 0.5 + noise</div></pre></td></tr></table></figure></p>
+<p>利用占位符定义我们所需的神经网络的输入。  $tf.placeholder()$ 就是代表占位符，这里的 $None$ 代表无论输入有多少都可以，因为输入只有一个特征，所以这里是1。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xs = tf.placeholder(tf.float32, [None, 1])</div><div class="line">ys = tf.placeholder(tf.float32, [None, 1])</div></pre></td></tr></table></figure></p>
+<p>接下来，就可以开始定义神经层了。 通常神经层都包括输入层、隐藏层和输出层。这里的输入层只有一个属性， 所以我们就只有一个输入；隐藏层我们可以自己假设，这里我们假设隐藏层有10个神经元； 输出层和输入层的结构是一样的，所以我们的输出层也是只有一层。 构建的是——输入层1个、隐藏层10个、输出层1个的神经网络。</p>
+<p>下面，开始定义隐藏层,利用之前的 $add_layer()$ 函数，这里使用 Tensorflow 自带的激励函数 $tf.nn.relu$.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">l1 = add_layer(xs, 1, 10, activation_function=tf.nn.relu)</div></pre></td></tr></table></figure></p>
+<p>接着，定义输出层。此时的输入就是隐藏层的输出——l1，输入有10层（隐藏层的输出层），输出有1层.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">prediction = add_layer(l1, 10, 1, activation_function=None)</div></pre></td></tr></table></figure></p>
+<p>计算预测值prediction和真实值的误差，对二者差的平方求和再取平均.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction),</div><div class="line">                     reduction_indices=[1]))</div></pre></td></tr></table></figure></p>
+<p>接下来，是很关键的一步，如何让机器学习提升它的准确率。$tf.train.GradientDescentOptimizer()$ 中的值通常都小于1，这里取的是0.1，代表以0.1的效率来最小化误差loss.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss)</div></pre></td></tr></table></figure></p>
+<p>使用变量时，都要对它进行初始化，这是必不可少的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># init = tf.initialize_all_variables() # tf 马上就要废弃这种写法</div><div class="line">init = tf.global_variables_initializer()  # 替换成这样就好</div></pre></td></tr></table></figure></p>
+<p>定义Session，并用 Session 来执行 init 初始化步骤。 （注意：在tensorflow中，只有 $session.run()$ 才会执行我们定义的运算。）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div></pre></td></tr></table></figure></p>
+<p>下面，让机器开始学习。</p>
+<p>比如这里让机器学习1000次。机器学习的内容是$train_step$ , 用 $Session$ 来 $run$ 每一次 $training$ 的数据，逐步提升神经网络的预测准确性。 (注意：当运算要用到$placeholder$ 时，就需要 $feed_dict$ 这个字典来指定输入。)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for i in range(1000):</div><div class="line">    # training</div><div class="line">    sess.run(train_step, feed_dict=&#123;xs: x_data, ys: y_data&#125;)</div></pre></td></tr></table></figure></p>
+<p>每50步我们输出一下机器学习的误差.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if i % 50 == 0:</div><div class="line">       # to see the step improvement</div><div class="line">       print(sess.run(loss, feed_dict=&#123;xs: x_data, ys: y_data&#125;))</div></pre></td></tr></table></figure></p>
+<p>完整代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line">from __future__ import print_function</div><div class="line">import tensorflow as tf</div><div class="line">import numpy as np</div><div class="line"></div><div class="line">def add_layer(inputs, in_size, out_size, activation_function=None):</div><div class="line">    # add one more layer and return the output of this layer</div><div class="line">    Weights = tf.Variable(tf.random_normal([in_size, out_size]))</div><div class="line">    biases = tf.Variable(tf.zeros([1, out_size]) + 0.1)</div><div class="line">    Wx_plus_b = tf.matmul(inputs, Weights) + biases</div><div class="line">    if activation_function is None:</div><div class="line">        outputs = Wx_plus_b</div><div class="line">    else:</div><div class="line">        outputs = activation_function(Wx_plus_b)</div><div class="line">    return outputs</div><div class="line"></div><div class="line"># Make up some real data</div><div class="line">x_data = np.linspace(-1,1,300)[:, np.newaxis]</div><div class="line">noise = np.random.normal(0, 0.05, x_data.shape)</div><div class="line">y_data = np.square(x_data) - 0.5 + noise</div><div class="line"></div><div class="line"># define placeholder for inputs to network</div><div class="line">xs = tf.placeholder(tf.float32, [None, 1])</div><div class="line">ys = tf.placeholder(tf.float32, [None, 1])</div><div class="line"># add hidden layer</div><div class="line">l1 = add_layer(xs, 1, 10, activation_function=tf.nn.relu)</div><div class="line"># add output layer</div><div class="line">prediction = add_layer(l1, 10, 1, activation_function=None)</div><div class="line"></div><div class="line"># the error between prediction and real data</div><div class="line">loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction),</div><div class="line">                     reduction_indices=[1]))</div><div class="line">train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss)</div><div class="line"></div><div class="line"># important step</div><div class="line"># tf.initialize_all_variables() no long valid from</div><div class="line"># 2017-03-02 if using tensorflow &gt;= 0.12</div><div class="line">if int((tf.__version__).split(&apos;.&apos;)[1]) &lt; 12:</div><div class="line">    init = tf.initialize_all_variables()</div><div class="line">else:</div><div class="line">    init = tf.global_variables_initializer()</div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line">for i in range(1000):</div><div class="line">    # training</div><div class="line">    sess.run(train_step, feed_dict=&#123;xs: x_data, ys: y_data&#125;)</div><div class="line">    if i % 50 == 0:</div><div class="line">        # to see the step improvement</div><div class="line">        print(sess.run(loss, feed_dict=&#123;xs: x_data, ys: y_data&#125;))</div><div class="line"></div><div class="line"># Outputs:误差在逐渐减小说明机器学习是有积极的效果的</div><div class="line">0.767026</div><div class="line">0.0129125</div><div class="line">0.00691156</div><div class="line">0.00445019</div><div class="line">0.00397647</div><div class="line">0.0037481</div><div class="line">0.00387755</div><div class="line">0.0168278</div><div class="line">0.00716892</div><div class="line">0.00518417</div><div class="line">0.00667961</div><div class="line">0.00739685</div><div class="line">0.00626943</div><div class="line">0.00609691</div><div class="line">0.00633302</div><div class="line">0.00636378</div><div class="line">0.00578478</div><div class="line">0.00554311</div><div class="line">0.0059535</div><div class="line">0.00645603</div></pre></td></tr></table></figure></p>
+<h1 id="结果可视化"><a href="#结果可视化" class="headerlink" title="结果可视化"></a>结果可视化</h1><p>构建图形，用散点图描述真实数据之间的关系。 （注意：plt.ion()用于连续显示。）构建图形，用散点图描述真实数据之间的关系。 （注意：$plt.ion()$ 用于连续显示。）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># plot the real data</div><div class="line">fig = plt.figure()</div><div class="line">ax = fig.add_subplot(1,1,1)</div><div class="line">ax.scatter(x_data, y_data)</div><div class="line">plt.ion()#本次运行请注释，全局运行不要注释</div><div class="line">plt.show()</div></pre></td></tr></table></figure></p>
+<p>接下来显示预测数据。<br><img src="/2017/05/27/tensorflow之神经网络二/1010.png" alt="img"><br>每隔50次训练刷新一次图形，用红色、宽度为5的线来显示我们的预测数据和输入之间的关系，并暂停0.1s。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">for i in range(1000):</div><div class="line">    # training</div><div class="line">    sess.run(train_step, feed_dict=&#123;xs: x_data, ys: y_data&#125;)</div><div class="line">    if i % 50 == 0:</div><div class="line">        # to visualize the result and improvement</div><div class="line">        try:</div><div class="line">            ax.lines.remove(lines[0])</div><div class="line">        except Exception:</div><div class="line">            pass</div><div class="line">        prediction_value = sess.run(prediction, feed_dict=&#123;xs: x_data&#125;)</div><div class="line">        # plot the prediction</div><div class="line">        lines = ax.plot(x_data, prediction_value, &apos;r-&apos;, lw=5)</div><div class="line">        plt.pause(0.1)</div></pre></td></tr></table></figure></p>
+<p>最后，机器学习的结果为：<br><img src="/2017/05/27/tensorflow之神经网络二/1011.png" alt="img"></p>
+<p>完整代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">from __future__ import print_function</div><div class="line">import tensorflow as tf</div><div class="line">import numpy as np</div><div class="line">import matplotlib.pyplot as plt</div><div class="line"></div><div class="line">def add_layer(inputs, in_size, out_size, activation_function=None):</div><div class="line">    Weights = tf.Variable(tf.random_normal([in_size, out_size]))</div><div class="line">    biases = tf.Variable(tf.zeros([1, out_size]) + 0.1)</div><div class="line">    Wx_plus_b = tf.matmul(inputs, Weights) + biases</div><div class="line">    if activation_function is None:</div><div class="line">        outputs = Wx_plus_b</div><div class="line">    else:</div><div class="line">        outputs = activation_function(Wx_plus_b)</div><div class="line">    return outputs</div><div class="line"></div><div class="line"># Make up some real data</div><div class="line">x_data = np.linspace(-1, 1, 300)[:, np.newaxis]</div><div class="line">noise = np.random.normal(0, 0.05, x_data.shape)</div><div class="line">y_data = np.square(x_data) - 0.5 + noise</div><div class="line"></div><div class="line">##plt.scatter(x_data, y_data)</div><div class="line">##plt.show()</div><div class="line"></div><div class="line"># define placeholder for inputs to network</div><div class="line">xs = tf.placeholder(tf.float32, [None, 1])</div><div class="line">ys = tf.placeholder(tf.float32, [None, 1])</div><div class="line"># add hidden layer</div><div class="line">l1 = add_layer(xs, 1, 10, activation_function=tf.nn.relu)</div><div class="line"># add output layer</div><div class="line">prediction = add_layer(l1, 10, 1, activation_function=None)</div><div class="line"></div><div class="line"># the error between prediction and real data</div><div class="line">loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys-prediction), reduction_indices=[1]))</div><div class="line">train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss)</div><div class="line"># important step</div><div class="line">sess = tf.Session()</div><div class="line"># tf.initialize_all_variables() no long valid from</div><div class="line"># 2017-03-02 if using tensorflow &gt;= 0.12</div><div class="line">if int((tf.__version__).split(&apos;.&apos;)[1]) &lt; 12 and int((tf.__version__).split(&apos;.&apos;)[0]) &lt; 1:</div><div class="line">    init = tf.initialize_all_variables()</div><div class="line">else:</div><div class="line">    init = tf.global_variables_initializer()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line"># plot the real data</div><div class="line">fig = plt.figure()</div><div class="line">ax = fig.add_subplot(1,1,1)</div><div class="line">ax.scatter(x_data, y_data)</div><div class="line">plt.ion()</div><div class="line">plt.show()</div><div class="line"></div><div class="line"></div><div class="line">for i in range(1000):</div><div class="line">    # training</div><div class="line">    sess.run(train_step, feed_dict=&#123;xs: x_data, ys: y_data&#125;)</div><div class="line">    if i % 50 == 0:</div><div class="line">        # to visualize the result and improvement</div><div class="line">        try:</div><div class="line">            ax.lines.remove(lines[0])</div><div class="line">        except Exception:</div><div class="line">            pass</div><div class="line">        prediction_value = sess.run(prediction, feed_dict=&#123;xs: x_data&#125;)</div><div class="line">        # plot the prediction</div><div class="line">        lines = ax.plot(x_data, prediction_value, &apos;r-&apos;, lw=5)</div><div class="line">        plt.pause(1)</div></pre></td></tr></table></figure></p>
+<h1 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h1><p>包括以下几种模式:<br>●Stochastic Gradient Descent (SGD)<br>●Momentum<br>●AdaGrad<br>●RMSProp<br>●Adam<br>越复杂的神经网络 , 越多的数据 , 需要在训练神经网络的过程上花费的时间也就越多. 原因很简单, 就是因为计算量太大了. 可是往往有时候为了解决复杂的问题, 复杂的结构和大数据又是不能避免的, 所以我们需要寻找一些方法, 让神经网络聪明起来, 快起来.</p>
+<h2 id="Stochastic-Gradient-Descent-SGD"><a href="#Stochastic-Gradient-Descent-SGD" class="headerlink" title="Stochastic Gradient Descent (SGD)"></a>Stochastic Gradient Descent (SGD)</h2><p><img src="/2017/05/27/tensorflow之神经网络二/000.png" alt="img"><br>所以, 最基础的方法就是 SGD 啦, 想像红色方块是我们要训练的 data, 如果用普通的训练方法, 就需要重复不断的把整套数据放入神经网络 NN训练, 这样消耗的计算资源会很大.</p>
+<p>换一种思路, 如果把这些数据拆分成小批小批的, 然后再分批不断放入 NN 中计算, 这就是常说的 SGD 的正确打开方式了. 每次使用批数据, 虽然不能反映整体数据的情况, 不过却很大程度上加速了 NN 的训练过程, 而且也不会丢失太多准确率.如果运用上了 SGD, 你还是嫌训练速度慢, 那怎么办?<br><img src="/2017/05/27/tensorflow之神经网络二/001.png" alt="img"><br>没问题, 事实证明, SGD 并不是最快速的训练方法, 红色的线是 SGD, 但它到达学习目标的时间是在这些方法中最长的一种. 我们还有很多其他的途径来加速训练.</p>
+<h2 id="Momentum-更新方法"><a href="#Momentum-更新方法" class="headerlink" title="Momentum 更新方法"></a>Momentum 更新方法</h2><p><img src="/2017/05/27/tensorflow之神经网络二/002.png" alt="img"><br>大多数其他途径是在更新神经网络参数那一步上动动手脚. 传统的参数 W 的更新是把原始的 W 累加上一个负的学习率(learning rate) 乘以校正值 (dx). 这种方法可能会让学习过程曲折无比, 看起来像 喝醉的人回家时, 摇摇晃晃走了很多弯路.<br><img src="/2017/05/27/tensorflow之神经网络二/002.png" alt="img"><br>所以我们把这个人从平地上放到了一个斜坡上, 只要他往下坡的方向走一点点, 由于向下的惯性, 他不自觉地就一直往下走, 走的弯路也变少了. 这就是 Momentum 参数更新. 另外一种加速方法叫AdaGrad.</p>
+<h2 id="AdaGrad-更新方法"><a href="#AdaGrad-更新方法" class="headerlink" title="AdaGrad 更新方法"></a>AdaGrad 更新方法</h2><p><img src="/2017/05/27/tensorflow之神经网络二/003.png" alt="img"><br>这种方法是在学习率上面动手脚, 使得每一个参数更新都会有自己与众不同的学习率, 他的作用和 momentum 类似, 不过不是给喝醉酒的人安排另一个下坡, 而是给他一双不好走路的鞋子, 使得他一摇晃着走路就脚疼, 鞋子成为了走弯路的阻力, 逼着他往前直着走. 他的数学形式是这样的. 接下来又有什么方法呢? 如果把下坡和不好走路的鞋子合并起来, 是不是更好呢? 没错, 这样我们就有了 RMSProp 更新方法.</p>
+<h2 id="RMSProp-更新方法"><a href="#RMSProp-更新方法" class="headerlink" title="RMSProp 更新方法"></a>RMSProp 更新方法</h2><p><img src="/2017/05/27/tensorflow之神经网络二/004.png" alt="img"><br>有了 momentum 的惯性原则 , 加上 adagrad 的对错误方向的阻力, 我们就能合并成这样. 让 RMSProp同时具备他们两种方法的优势. 不过细心的同学们肯定看出来了, 似乎在 RMSProp 中少了些什么. 原来是我们还没把 Momentum合并完全, RMSProp 还缺少了 momentum 中的 这一部分. 所以, 我们在 Adam 方法中补上了这种想法.</p>
+<h2 id="Adam-更新方法"><a href="#Adam-更新方法" class="headerlink" title="Adam 更新方法"></a>Adam 更新方法</h2><p><img src="/2017/05/27/tensorflow之神经网络二/005.png" alt="img"><br>计算m 时有 momentum 下坡的属性, 计算 v 时有 adagrad 阻力的属性, 然后再更新参数时 把 m 和 V 都考虑进去. 实验证明, 大多数时候, 使用 adam 都能又快又好的达到目标, 迅速收敛. 所以说, 在加速神经网络训练的时候, 一个下坡, 一双破鞋子, 功不可没.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/w.png" alt="王敏 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/z.png" alt="王敏 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/神经网络/" rel="tag"># 神经网络</a>
+          
+            <a href="/tags/CNN/" rel="tag"># CNN</a>
+          
+            <a href="/tags/RNN/" rel="tag"># RNN</a>
+          
+            <a href="/tags/LSTM/" rel="tag"># LSTM</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/27/tensorflow之神经网络一/" rel="next" title="TensorFlow之神经网络(一)">
+                <i class="fa fa-chevron-left"></i> TensorFlow之神经网络(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/29/一些机器学习算法/" rel="prev" title="一些机器学习算法">
+                一些机器学习算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/000.jpg"
+               alt="王敏" />
+          <p class="site-author-name" itemprop="name">王敏</p>
+           
+              <p class="site-description motion-element" itemprop="description">一蓑烟雨任平生</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ynuwm" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/ynuwm" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.weibo.com/jcshaozhu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/justanonymous/answers" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jeyzhang.com/" title="JEY" target="_blank">JEY</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.flickering.cn/" title="FLICK" target="_blank">FLICK</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.52ml.net/" title="52ML" target="_blank">52ML</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.52nlp.cn/" title="52NLP" target="_blank">52NLP</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://52opencourse.com/" title="52OPENC" target="_blank">52OPENC</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/wangxinginnlp/article/details/44890553" title="NLPGROUP" target="_blank">NLPGROUP</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#添加层-def-add-layer"><span class="nav-number">1.</span> <span class="nav-text">添加层 def add_layer()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造神经网络"><span class="nav-number">2.</span> <span class="nav-text">构造神经网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结果可视化"><span class="nav-number">3.</span> <span class="nav-text">结果可视化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化器"><span class="nav-number">4.</span> <span class="nav-text">优化器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Stochastic-Gradient-Descent-SGD"><span class="nav-number">4.1.</span> <span class="nav-text">Stochastic Gradient Descent (SGD)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Momentum-更新方法"><span class="nav-number">4.2.</span> <span class="nav-text">Momentum 更新方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AdaGrad-更新方法"><span class="nav-number">4.3.</span> <span class="nav-text">AdaGrad 更新方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RMSProp-更新方法"><span class="nav-number">4.4.</span> <span class="nav-text">RMSProp 更新方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adam-更新方法"><span class="nav-number">4.5.</span> <span class="nav-text">Adam 更新方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王敏</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+  <span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+  <span id="showDays"></span>
+</div>
+
+
+<script>
+	var birthDay = new Date('04/30/2017');
+	var now = new Date();
+	var duration = now.getTime() - birthDay.getTime();
+	var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+	document.getElementById('showDays').innerHTML='本站已运行' + total + '天';
+</script>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cysYjnueo';
+      var conf = 'b92520c5cf51563daa727ea70256e46d';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      $('#local-search-input').focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

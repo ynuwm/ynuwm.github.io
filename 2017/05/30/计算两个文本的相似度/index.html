@@ -1,0 +1,1465 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="LSA,LAI,文本相似度,主题模型," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="王敏的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="相关背景资料主题模型采用LSI(Latent semantic indexing, 中文译为浅层语义索引），LSI区别LSA（Latent semantic analysis，中文译为浅层语义分析）  1） TF-IDF，余弦相似度，向量空间模型TF-IDF与余弦相似性的应用（一）：自动提取关键词、TF-IDF与余弦相似性的应用（二）：找出相似文章 2）SVD和LSI想了解LSI一定要知道SVD（">
+<meta name="keywords" content="LSA,LAI,文本相似度,主题模型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算两个文本的相似度">
+<meta property="og:url" content="http://yoursite.com/2017/05/30/计算两个文本的相似度/index.html">
+<meta property="og:site_name" content="王敏的博客">
+<meta property="og:description" content="相关背景资料主题模型采用LSI(Latent semantic indexing, 中文译为浅层语义索引），LSI区别LSA（Latent semantic analysis，中文译为浅层语义分析）  1） TF-IDF，余弦相似度，向量空间模型TF-IDF与余弦相似性的应用（一）：自动提取关键词、TF-IDF与余弦相似性的应用（二）：找出相似文章 2）SVD和LSI想了解LSI一定要知道SVD（">
+<meta property="og:image" content="http://yoursite.com/2017/05/30/计算两个文本的相似度/0000.png">
+<meta property="og:updated_time" content="2017-06-24T03:15:04.293Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算两个文本的相似度">
+<meta name="twitter:description" content="相关背景资料主题模型采用LSI(Latent semantic indexing, 中文译为浅层语义索引），LSI区别LSA（Latent semantic analysis，中文译为浅层语义分析）  1） TF-IDF，余弦相似度，向量空间模型TF-IDF与余弦相似性的应用（一）：自动提取关键词、TF-IDF与余弦相似性的应用（二）：找出相似文章 2）SVD和LSI想了解LSI一定要知道SVD（">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/30/计算两个文本的相似度/0000.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/30/计算两个文本的相似度/"/>
+
+
+
+
+
+  <title>计算两个文本的相似度 | 王敏的博客</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王敏的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">按照自己的方式去度过人生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/30/计算两个文本的相似度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王敏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/000.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                计算两个文本的相似度
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-30T09:28:45+08:00">
+                2017-05-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/深度学习/" itemprop="url" rel="index">
+                    <span itemprop="name">深度学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/05/30/计算两个文本的相似度/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/05/30/计算两个文本的相似度/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="相关背景资料"><a href="#相关背景资料" class="headerlink" title="相关背景资料"></a>相关背景资料</h1><p>主题模型采用LSI(Latent semantic indexing, 中文译为浅层语义索引），LSI区别LSA（Latent semantic analysis，中文译为浅层语义分析） </p>
+<p>1） TF-IDF，余弦相似度，向量空间模型<br><a href="http://www.ruanyifeng.com/blog/2013/03/tf-idf.html" rel="external" color="blue" target="_blank">TF-IDF与余弦相似性的应用（一）：自动提取关键词</a>、<a href="http://www.ruanyifeng.com/blog/2013/03/cosine_similarity.html" rel="external" color="blue" target="_blank">TF-IDF与余弦相似性的应用（二）：找出相似文章</a></p>
+<p>2）SVD和LSI<br>想了解LSI一定要知道SVD（Singular value decomposition, 中文译为奇异值分解），而SVD的作用不仅仅局限于LSI，在很多地方都能见到其身影，SVD自诞生之后，其应用领域不断被发掘，可以不夸张的说如果学了线性代数而不明白SVD，基本上等于没学。教程：<a href="http://www.cnblogs.com/LeftNotEasy/archive/2011/01/08/lda-and-pca-machine-learning.html" rel="external" color="blue" target="_blank">机器学习中的数学(4)-线性判别分析（LDA）, 主成分分析(PCA)</a>、<a href="http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html" rel="external" color="blue" target="_blank">机器学习中的数学(5)-强大的矩阵奇异值分解(SVD)及其应用</a></p>
+<p>关于LSI，简单说两句，一种情况下考察两个词的关系常常考虑的是它们在一个窗口长度（譬如一句话，一段话或一个文章）里的共现情况，在语料库语言学里有个专业点叫法叫Collocation，中文译为搭配或词语搭配。而LSI所做的是挖掘如下这层词语关系：<strong>A和C共现，B和C共现，目标是找到A和B的隐含关系，学术一点的叫法是second-order co-ocurrence</strong>。以下引用百度空间上一篇介绍相关参考资料时的简要描述：</p>
+<p>LSI本质上识别了以文档为单位的second-order co-ocurrence的单词并归入同一个子空间。因此：<br>1）落在同一子空间的单词不一定是同义词，甚至不一定是在同情景下出现的单词，对于长篇文档尤其如是。<br>2）LSI根本无法处理一词多义的单词（多义词），多义词会导致LSI效果变差。</p>
+<p>A persistent myth in search marketing circles is that LSI grants contextuality; i.e., terms occurring in the same context. This is not always the case. Consider two documents X and Y and three terms A, B and C and wherein:</p>
+<p>A and B do not co-occur.<br>X mentions terms A and C<br>Y mentions terms B and C.</p>
+<p>:. A—C—B</p>
+<p>The common denominator is C, so we define this relation as an in-transit co-occurrence since both A and B occur while in transit with C. This is called second-order co-occurrence and is a special case of high-order co-occurrence.</p>
+<p>PDF Tutorial版本：<br><a href="http://cs.fit.edu/~dmitra/SciComp/Resources/singular-value-decomposition-fast-track-tutorial.pdf" rel="external" color="blue" target="_blank">Singular Value Decomposition (SVD)- A Fast Track Tutorial</a></p>
+<p><a href="http://www.ce.yildiz.edu.tr/personal/banud/file/1201/latent-semantic-indexing-fast-track-tutorial.pdf" rel="external" color="blue" target="_blank">Latent Semantic Indexing (LSI) A Fast Track Tutorial</a></p>
+<p>3) LDA<br><a href="http://www.cnblogs.com/LeftNotEasy/archive/2011/01/08/lda-and-pca-machine-learning.html" rel="external" color="blue" target="_blank">机器学习中的数学(4)-线性判别分析（LDA）, 主成分分析(PCA)</a></p>
+<h1 id="gensim基本使用"><a href="#gensim基本使用" class="headerlink" title="gensim基本使用"></a>gensim基本使用</h1><pre><code>from gensim import corpora, models, similarities
+import logging
+logging.basicConfig(format=&apos;%(asctime)s : %(levelname)s : %(message)s&apos;, level=logging.INFO)
+</code></pre><p>然后将上面那个文档中的例子作为文档输入，在Python中用document list表示：</p>
+<pre><code>documents = [&quot;Shipment of gold damaged in a fire&quot;,
+&quot;Delivery of silver arrived in a silver truck&quot;,
+&quot;Shipment of gold arrived in a truck&quot;]
+</code></pre><p>正常情况下，需要对英文文本做一些预处理工作，譬如去停用词，对文本进行tokenize，stemming以及过滤掉低频的词，但是为了说明问题，也是为了和这篇”LSI Fast Track Tutorial”保持一致，以下的预处理仅仅是将英文单词小写化：</p>
+<pre><code>texts = [[word for word in document.lower().split()] for document in documents]
+print texts
+#[[&apos;shipment&apos;, &apos;of&apos;, &apos;gold&apos;, &apos;damaged&apos;, &apos;in&apos;, &apos;a&apos;, &apos;fire&apos;], [&apos;delivery&apos;, &apos;of&apos;, &apos;silver&apos;, &apos;arrived&apos;, &apos;in&apos;, &apos;a&apos;, &apos;silver&apos;, &apos;truck&apos;], [&apos;shipment&apos;, &apos;of&apos;, &apos;gold&apos;, &apos;arrived&apos;, &apos;in&apos;, &apos;a&apos;, &apos;truck&apos;]]
+</code></pre><p>我们可以通过这些文档抽取一个“词袋（bag-of-words)”，将文档的token映射为id：</p>
+<pre><code>dictionary = corpora.Dictionary(texts)
+print dictionary
+#Dictionary(11 unique tokens)
+print dictionary.token2id
+#{&apos;a&apos;: 0, &apos;damaged&apos;: 1, &apos;gold&apos;: 3, &apos;fire&apos;: 2, &apos;of&apos;: 5, &apos;delivery&apos;: 8, &apos;arrived&apos;: 7, &apos;shipment&apos;: 6, &apos;in&apos;: 4, &apos;truck&apos;: 10, &apos;silver&apos;: 9}
+</code></pre><p>然后就可以将用字符串表示的文档转换为用id表示的文档向量：</p>
+<pre><code>corpus = [dictionary.doc2bow(text) for text in texts]
+print corpus
+#[[(0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1)], [(0, 1), (4, 1), (5, 1), (7, 1), (8, 1), (9, 2), (10, 1)], [(0, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (10, 1)]]
+</code></pre><p>例如（9，2）这个元素代表第二篇文档中id为9的单词“silver”出现了2次。</p>
+<p>有了这些信息，我们就可以基于这些“训练文档”计算一个TF-IDF“模型”：</p>
+<pre><code>tfidf = models.TfidfModel(corpus)
+</code></pre><p>基于这个TF-IDF模型，我们可以将上述用词频表示文档向量表示为一个用tf-idf值表示的文档向量：</p>
+<pre><code>corpus_tfidf = tfidf[corpus]
+for doc in corpus_tfidf:
+... print doc
+#[(1, 0.6633689723434505), (2, 0.6633689723434505), (3, 0.2448297500958463), (6, 0.2448297500958463)]
+[(7, 0.16073253746956623), (8, 0.4355066251613605), (9, 0.871013250322721), (10, 0.16073253746956623)]
+[(3, 0.5), (6, 0.5), (7, 0.5), (10, 0.5)]
+</code></pre><p>发现一些token貌似丢失了，我们打印一下tfidf模型中的信息：</p>
+<pre><code>print tfidf.dfs
+#{0: 3, 1: 1, 2: 1, 3: 2, 4: 3, 5: 3, 6: 2, 7: 2, 8: 1, 9: 1, 10: 2}
+print tfidf.idfs
+#{0: 0.0, 1: 1.5849625007211563, 2: 1.5849625007211563, 3: 0.5849625007211562, 4: 0.0, 5: 0.0, 6: 0.5849625007211562, 7: 0.5849625007211562, 8: 1.5849625007211563, 9: 1.5849625007211563, 10: 0.5849625007211562}
+</code></pre><p>我们发现由于包含id为0， 4， 5这3个单词的文档数（df)为3，而文档总数也为3，所以idf被计算为0了，看来gensim没有对分子加1，做一个平滑。不过我们同时也发现这3个单词分别为a, in, of这样的介词，完全可以在预处理时作为停用词干掉，这也从另一个方面说明TF-IDF的有效性。</p>
+<p>有了tf-idf值表示的文档向量，我们就可以训练一个LSI模型，和Latent Semantic Indexing (LSI) A Fast Track Tutorial中的例子相似，我们设置topic数为2：</p>
+<pre><code>lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=2)
+lsi.print_topics(2)
+# topic #0(1.137): 0.438*&quot;gold&quot; + 0.438*&quot;shipment&quot; + 0.366*&quot;truck&quot; + 0.366*&quot;arrived&quot; + 0.345*&quot;damaged&quot; + 0.345*&quot;fire&quot; + 0.297*&quot;silver&quot; + 0.149*&quot;delivery&quot; + 0.000*&quot;in&quot; + 0.000*&quot;a&quot;
+topic #1(1.000): 0.728*&quot;silver&quot; + 0.364*&quot;delivery&quot; + -0.364*&quot;fire&quot; + -0.364*&quot;damaged&quot; + 0.134*&quot;truck&quot; + 0.134*&quot;arrived&quot; + -0.134*&quot;shipment&quot; + -0.134*&quot;gold&quot; + -0.000*&quot;a&quot; + -0.000*&quot;in&quot;
+</code></pre><p>lsi的物理意义不太好解释，不过最核心的意义是将训练文档向量组成的矩阵SVD分解，并做了一个秩为2的近似SVD分解，可以参考那篇英文tutorail。有了这个lsi模型，我们就可以将文档映射到一个二维的topic空间中：</p>
+<pre><code>corpus_lsi = lsi[corpus_tfidf]
+for doc in corpus_lsi:
+... print doc
+#[(0, 0.67211468809878649), (1, -0.54880682119355917)]
+[(0, 0.44124825208697727), (1, 0.83594920480339041)]
+[(0, 0.80401378963792647)]
+可以看出，文档1，3和topic1更相关，文档2和topic2更相关；
+</code></pre><p>我们也可以顺手跑一个LDA模型：</p>
+<pre><code>lda = models.LdaModel(copurs_tfidf, id2word=dictionary, num_topics=2)
+lda.print_topics(2)
+#topic #0: 0.119*silver + 0.107*shipment + 0.104*truck + 0.103*gold + 0.102*fire + 0.101*arrived + 0.097*damaged + 0.085*delivery + 0.061*of + 0.061*in
+topic #1: 0.110*gold + 0.109*silver + 0.105*shipment + 0.105*damaged + 0.101*arrived + 0.101*fire + 0.098*truck + 0.090*delivery + 0.061*of + 0.061*in
+</code></pre><p>lda模型中的每个主题单词都有概率意义，其加和为1，值越大权重越大，物理意义比较明确，不过反过来再看这三篇文档训练的2个主题的LDA模型太平均了，没有说服力。</p>
+<p>好了，我们回到LSI模型，有了LSI模型，我们如何来计算文档直接的相思度，或者换个角度，给定一个查询Query，如何找到最相关的文档？当然首先是建索引了：</p>
+<pre><code>index = similarities.MatrixSimilarity(lsi[corpus])
+</code></pre><p>还是以这篇英文tutorial中的查询Query为例：gold silver truck。首先将其向量化：</p>
+<pre><code>query = &quot;gold silver truck&quot;
+query_bow = dictionary.doc2bow(query.lower().split())
+print query_bow
+[(3, 1), (9, 1), (10, 1)]
+</code></pre><p>再用之前训练好的LSI模型将其映射到二维的topic空间：</p>
+<pre><code>query_lsi = lsi[query_bow]
+print query_lsi
+[(0, 1.1012835748628467), (1, 0.72812283398049593)]
+</code></pre><p>最后就是计算其和index中doc的余弦相似度了：</p>
+<pre><code>sims = index[query_lsi]
+print list(enumerate(sims))
+[(0, 0.40757114), (1, 0.93163693), (2, 0.83416492)]
+</code></pre><p>当然，我们也可以按相似度进行排序：</p>
+<pre><code>sort_sims = sorted(enumerate(sims), key=lambda item: -item[1])
+print sort_sims
+[(1, 0.93163693), (2, 0.83416492), (0, 0.40757114)]
+</code></pre><p>可以看出，这个查询的结果是doc2 &gt; doc3 &gt; doc1，和fast tutorial是一致的，虽然数值上有一些差别：<br><img src="/2017/05/30/计算两个文本的相似度/0000.png" alt="img"></p>
+<h1 id="计算两个文档的相似度"><a href="#计算两个文档的相似度" class="headerlink" title="计算两个文档的相似度"></a>计算两个文档的相似度</h1><p>本节将主要说明如何基于gensim计算课程图谱上课程之间的主题相似度，同时考虑一些改进方法，包括借助英文的自然语言处理工具包NLTK以及用更大的维基百科的语料来看看效果。</p>
+<h2 id="1、数据准备"><a href="#1、数据准备" class="headerlink" title="1、数据准备"></a>1、数据准备</h2><p>这里准备了一份Coursera的课程数据，可以在这里下载：coursera_corpus，（百度网盘链接: <a href="http://t.cn/RhjgPkv" target="_blank" rel="external">http://t.cn/RhjgPkv</a>, 密码: oppc）总共379个课程，每行包括3部分内容：课程名\t课程简介\t课程详情, 已经清除了其中的html tag, 下面所示的例子仅仅是其中的课程名：</p>
+<pre><code>Writing II: Rhetorical Composing
+Genetics and Society: A Course for Educators
+General Game Playing
+Genes and the Human Condition (From Behavior to Biotechnology)
+A Brief History of Humankind
+New Models of Business in Society
+Analyse Numérique pour Ingénieurs
+Evolution: A Course for Educators
+Coding the Matrix: Linear Algebra through Computer Science Applications
+The Dynamic Earth: A Course for Educators
+...
+</code></pre><p>首先加载数据：</p>
+<pre><code>from gensim import corpora, models, similarities
+import logging
+logging.basicConfig(format=&apos;%(asctime)s : %(levelname)s : %(message)s&apos;, level=logging.INFO)
+import csv
+
+file = open(&quot;coursera_corpus&quot;,&apos;r&apos;,encoding = &apos;UTF8&apos;)
+courses = [line.strip() for line in file]
+courses_name = [course.split(&apos;\t&apos;)[0] for course in courses]
+print(courses_name[0:10])
+
+#[&apos;Writing II: Rhetorical Composing&apos;, &apos;Genetics and Society: A Course for Educators&apos;, &apos;General Game Playing&apos;, &apos;Genes and the Human Condition (From Behavior to Biotechnology)&apos;, &apos;A Brief History of Humankind&apos;, &apos;New Models of Business in Society&apos;, &apos;Analyse Num\xc3\xa9rique pour Ing\xc3\xa9nieurs&apos;, &apos;Evolution: A Course for Educators&apos;, &apos;Coding the Matrix: Linear Algebra through Computer Science Applications&apos;, &apos;The Dynamic Earth: A Course for Educators&apos;]
+</code></pre><h2 id="2、引入NLTK"><a href="#2、引入NLTK" class="headerlink" title="2、引入NLTK"></a>2、引入NLTK</h2><p>NTLK是著名的Python自然语言处理工具包，但是主要针对的是英文处理，不过课程图谱目前处理的课程数据主要是英文，因此也足够了。</p>
+<pre><code>import nltk
+nltk.download()
+</code></pre><p>现在来处理刚才的课程数据，如果按此前的方法仅仅对文档的单词小写化的话，将得到如下的结果：</p>
+<pre><code>exts_lower = [[word for word in document.lower().split()] for document in courses]
+print texts_lower[0]
+#[&apos;writing&apos;, &apos;ii:&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;engages&apos;, &apos;you&apos;, &apos;in&apos;, &apos;a&apos;, &apos;series&apos;, &apos;of&apos;, &apos;interactive&apos;, &apos;reading,&apos;, &apos;research,&apos;, &apos;and&apos;, &apos;composing&apos;, &apos;activities&apos;, &apos;along&apos;, &apos;with&apos;, &apos;assignments&apos;, &apos;designed&apos;, &apos;to&apos;, &apos;help&apos;, &apos;you&apos;, &apos;become&apos;, &apos;more&apos;, &apos;effective&apos;, &apos;consumers&apos;, &apos;and&apos;, &apos;producers&apos;, &apos;of&apos;, &apos;alphabetic,&apos;, &apos;visual&apos;, &apos;and&apos;, &apos;multimodal&apos;, &apos;texts.&apos;, &apos;join&apos;, &apos;us&apos;, &apos;to&apos;, &apos;become&apos;, &apos;more&apos;, &apos;effective&apos;, &apos;writers...&apos;, &apos;and&apos;, &apos;better&apos;, &apos;citizens.&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;is&apos;, &apos;a&apos;, &apos;course&apos;, &apos;where&apos;, &apos;writers&apos;, &apos;exchange&apos;, &apos;words,&apos;, &apos;ideas,&apos;, &apos;talents,&apos;, &apos;and&apos;, &apos;support.&apos;, &apos;you&apos;, &apos;will&apos;, &apos;be&apos;, &apos;introduced&apos;, &apos;to&apos;, &apos;a&apos;, ...
+</code></pre><p>注意其中很多标点符号和单词是没有分离的，所以我们引入nltk的word_tokenize函数，并处理相应的数据：</p>
+<pre><code>from nltk.tokenize import word_tokenize
+texts_tokenized = [[word.lower() for word in word_tokenize(document.decode(&apos;utf-8&apos;))] for document in courses]
+print texts_tokenized[0]
+#[&apos;writing&apos;, &apos;ii&apos;, &apos;:&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;engages&apos;, &apos;you&apos;, &apos;in&apos;, &apos;a&apos;, &apos;series&apos;, &apos;of&apos;, &apos;interactive&apos;, &apos;reading&apos;, &apos;,&apos;, &apos;research&apos;, &apos;,&apos;, &apos;and&apos;, &apos;composing&apos;, &apos;activities&apos;, &apos;along&apos;, &apos;with&apos;, &apos;assignments&apos;, &apos;designed&apos;, &apos;to&apos;, &apos;help&apos;, &apos;you&apos;, &apos;become&apos;, &apos;more&apos;, &apos;effective&apos;, &apos;consumers&apos;, &apos;and&apos;, &apos;producers&apos;, &apos;of&apos;, &apos;alphabetic&apos;, &apos;,&apos;, &apos;visual&apos;, &apos;and&apos;, &apos;multimodal&apos;, &apos;texts.&apos;, &apos;join&apos;, &apos;us&apos;, &apos;to&apos;, &apos;become&apos;, &apos;more&apos;, &apos;effective&apos;, &apos;writers&apos;, &apos;...&apos;, &apos;and&apos;, &apos;better&apos;, &apos;citizens.&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;is&apos;, &apos;a&apos;, &apos;course&apos;, &apos;where&apos;, &apos;writers&apos;, &apos;exchange&apos;, &apos;words&apos;, &apos;,&apos;, &apos;ideas&apos;, &apos;,&apos;, &apos;talents&apos;, &apos;,&apos;, &apos;and&apos;, &apos;support.&apos;, &apos;you&apos;, &apos;will&apos;, &apos;be&apos;, &apos;introduced&apos;, &apos;to&apos;, &apos;a&apos;, ...
+</code></pre><p>对课程的英文数据进行tokenize之后，我们需要去停用词，幸好NLTK提供了一份英文停用词数据：</p>
+<pre><code>from nltk.corpus import stopwords
+english_stopwords = stopwords.words(&apos;english&apos;)
+print english_stopwords
+#[&apos;i&apos;, &apos;me&apos;, &apos;my&apos;, &apos;myself&apos;, &apos;we&apos;, &apos;our&apos;, &apos;ours&apos;, &apos;ourselves&apos;, &apos;you&apos;, &apos;your&apos;, &apos;yours&apos;, &apos;yourself&apos;, &apos;yourselves&apos;, &apos;he&apos;, &apos;him&apos;, &apos;his&apos;, &apos;himself&apos;, &apos;she&apos;, &apos;her&apos;, &apos;hers&apos;, &apos;herself&apos;, &apos;it&apos;, &apos;its&apos;, &apos;itself&apos;, &apos;they&apos;, &apos;them&apos;, &apos;their&apos;, &apos;theirs&apos;, &apos;themselves&apos;, &apos;what&apos;, &apos;which&apos;, &apos;who&apos;, &apos;whom&apos;, &apos;this&apos;, &apos;that&apos;, &apos;these&apos;, &apos;those&apos;, &apos;am&apos;, &apos;is&apos;, &apos;are&apos;, &apos;was&apos;, &apos;were&apos;, &apos;be&apos;, &apos;been&apos;, &apos;being&apos;, &apos;have&apos;, &apos;has&apos;, &apos;had&apos;, &apos;having&apos;, &apos;do&apos;, &apos;does&apos;, &apos;did&apos;, &apos;doing&apos;, &apos;a&apos;, &apos;an&apos;, &apos;the&apos;, &apos;and&apos;, &apos;but&apos;, &apos;if&apos;, &apos;or&apos;, &apos;because&apos;, &apos;as&apos;, &apos;until&apos;, &apos;while&apos;, &apos;of&apos;, &apos;at&apos;, &apos;by&apos;, &apos;for&apos;, &apos;with&apos;, &apos;about&apos;, &apos;against&apos;, &apos;between&apos;, &apos;into&apos;, &apos;through&apos;, &apos;during&apos;, &apos;before&apos;, &apos;after&apos;, &apos;above&apos;, &apos;below&apos;, &apos;to&apos;, &apos;from&apos;, &apos;up&apos;, &apos;down&apos;, &apos;in&apos;, &apos;out&apos;, &apos;on&apos;, &apos;off&apos;, &apos;over&apos;, &apos;under&apos;, &apos;again&apos;, &apos;further&apos;, &apos;then&apos;, &apos;once&apos;, &apos;here&apos;, &apos;there&apos;, &apos;when&apos;, &apos;where&apos;, &apos;why&apos;, &apos;how&apos;, &apos;all&apos;, &apos;any&apos;, &apos;both&apos;, &apos;each&apos;, &apos;few&apos;, &apos;more&apos;, &apos;most&apos;, &apos;other&apos;, &apos;some&apos;, &apos;such&apos;, &apos;no&apos;, &apos;nor&apos;, &apos;not&apos;, &apos;only&apos;, &apos;own&apos;, &apos;same&apos;, &apos;so&apos;, &apos;than&apos;, &apos;too&apos;, &apos;very&apos;, &apos;s&apos;, &apos;t&apos;, &apos;can&apos;, &apos;will&apos;, &apos;just&apos;, &apos;don&apos;, &apos;should&apos;, &apos;now&apos;]
+len(english_stopwords)
+#127
+</code></pre><p>总计127个停用词，我们首先过滤课程语料中的停用词：</p>
+<pre><code>texts_filtered_stopwords = [[word for word in document if not word in english_stopwords] for document in texts_tokenized]
+print texts_filtered_stopwords[0]
+#[&apos;writing&apos;, &apos;ii&apos;, &apos;:&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;engages&apos;, &apos;series&apos;, &apos;interactive&apos;, &apos;reading&apos;, &apos;,&apos;, &apos;research&apos;, &apos;,&apos;, &apos;composing&apos;, &apos;activities&apos;, &apos;along&apos;, &apos;assignments&apos;, &apos;designed&apos;, &apos;help&apos;, &apos;become&apos;, &apos;effective&apos;, &apos;consumers&apos;, &apos;producers&apos;, &apos;alphabetic&apos;, &apos;,&apos;, &apos;visual&apos;, &apos;multimodal&apos;, &apos;texts.&apos;, &apos;join&apos;, &apos;us&apos;, &apos;become&apos;, &apos;effective&apos;, &apos;writers&apos;, &apos;...&apos;, &apos;better&apos;, &apos;citizens.&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;course&apos;, &apos;writers&apos;, &apos;exchange&apos;, &apos;words&apos;, &apos;,&apos;, &apos;ideas&apos;, &apos;,&apos;, &apos;talents&apos;, &apos;,&apos;, &apos;support.&apos;, &apos;introduced&apos;, &apos;variety&apos;, &apos;rhetorical&apos;, &apos;concepts\xe2\x80\x94that&apos;, &apos;,&apos;, &apos;ideas&apos;, &apos;techniques&apos;, &apos;inform&apos;, &apos;persuade&apos;, &apos;audiences\xe2\x80\x94that&apos;, &apos;help&apos;, &apos;become&apos;, &apos;effective&apos;, &apos;consumer&apos;, &apos;producer&apos;, &apos;written&apos;, &apos;,&apos;, &apos;visual&apos;, &apos;,&apos;, &apos;multimodal&apos;, &apos;texts.&apos;, &apos;class&apos;, &apos;includes&apos;, &apos;short&apos;, &apos;videos&apos;, &apos;,&apos;, &apos;demonstrations&apos;, &apos;,&apos;, &apos;activities.&apos;, &apos;envision&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;learning&apos;, &apos;community&apos;, &apos;includes&apos;, &apos;enrolled&apos;, &apos;course&apos;, &apos;instructors.&apos;, &apos;bring&apos;, &apos;expertise&apos;, &apos;writing&apos;, &apos;,&apos;, &apos;rhetoric&apos;, &apos;course&apos;, &apos;design&apos;, &apos;,&apos;, &apos;designed&apos;, &apos;assignments&apos;, &apos;course&apos;, &apos;infrastructure&apos;, &apos;help&apos;, &apos;share&apos;, &apos;experiences&apos;, &apos;writers&apos;, &apos;,&apos;, &apos;students&apos;, &apos;,&apos;, &apos;professionals&apos;, &apos;us.&apos;, &apos;collaborations&apos;, &apos;facilitated&apos;, &apos;wex&apos;, &apos;,&apos;, &apos;writers&apos;, &apos;exchange&apos;, &apos;,&apos;, &apos;place&apos;, &apos;exchange&apos;, &apos;work&apos;, &apos;feedback&apos;]
+</code></pre><p> 停用词被过滤了，不过发现标点符号还在，这个好办，我们首先定义一个标点符号list:</p>
+<pre><code>english_punctuations = [&apos;,&apos;, &apos;.&apos;, &apos;:&apos;, &apos;;&apos;, &apos;?&apos;, &apos;(&apos;, &apos;)&apos;, &apos;[&apos;, &apos;]&apos;, &apos;&amp;&apos;, &apos;!&apos;, &apos;*&apos;, &apos;@&apos;, &apos;#&apos;, &apos;$&apos;, &apos;%&apos;]
+
+然后过滤这些标点符号：
+
+texts_filtered = [[word for word in document if not word in english_punctuations] for document in texts_filtered_stopwords]
+print texts_filtered[0]
+#[&apos;writing&apos;, &apos;ii&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;engages&apos;, &apos;series&apos;, &apos;interactive&apos;, &apos;reading&apos;, &apos;research&apos;, &apos;composing&apos;, &apos;activities&apos;, &apos;along&apos;, &apos;assignments&apos;, &apos;designed&apos;, &apos;help&apos;, &apos;become&apos;, &apos;effective&apos;, &apos;consumers&apos;, &apos;producers&apos;, &apos;alphabetic&apos;, &apos;visual&apos;, &apos;multimodal&apos;, &apos;texts.&apos;, &apos;join&apos;, &apos;us&apos;, &apos;become&apos;, &apos;effective&apos;, &apos;writers&apos;, &apos;...&apos;, &apos;better&apos;, &apos;citizens.&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;course&apos;, &apos;writers&apos;, &apos;exchange&apos;, &apos;words&apos;, &apos;ideas&apos;, &apos;talents&apos;, &apos;support.&apos;, &apos;introduced&apos;, &apos;variety&apos;, &apos;rhetorical&apos;, &apos;concepts\xe2\x80\x94that&apos;, &apos;ideas&apos;, &apos;techniques&apos;, &apos;inform&apos;, &apos;persuade&apos;, &apos;audiences\xe2\x80\x94that&apos;, &apos;help&apos;, &apos;become&apos;, &apos;effective&apos;, &apos;consumer&apos;, &apos;producer&apos;, &apos;written&apos;, &apos;visual&apos;, &apos;multimodal&apos;, &apos;texts.&apos;, &apos;class&apos;, &apos;includes&apos;, &apos;short&apos;, &apos;videos&apos;, &apos;demonstrations&apos;, &apos;activities.&apos;, &apos;envision&apos;, &apos;rhetorical&apos;, &apos;composing&apos;, &apos;learning&apos;, &apos;community&apos;, &apos;includes&apos;, &apos;enrolled&apos;, &apos;course&apos;, &apos;instructors.&apos;, &apos;bring&apos;, &apos;expertise&apos;, &apos;writing&apos;, &apos;rhetoric&apos;, &apos;course&apos;, &apos;design&apos;, &apos;designed&apos;, &apos;assignments&apos;, &apos;course&apos;, &apos;infrastructure&apos;, &apos;help&apos;, &apos;share&apos;, &apos;experiences&apos;, &apos;writers&apos;, &apos;students&apos;, &apos;professionals&apos;, &apos;us.&apos;, &apos;collaborations&apos;, &apos;facilitated&apos;, &apos;wex&apos;, &apos;writers&apos;, &apos;exchange&apos;, &apos;place&apos;, &apos;exchange&apos;, &apos;work&apos;, &apos;feedback&apos;]
+</code></pre><p>更进一步，我们对这些英文单词词干化（Stemming)，NLTK提供了好几个相关工具接口可供选择，具体参考这个页面: <a href="http://nltk.org/api/nltk.stem.html" target="_blank" rel="external">http://nltk.org/api/nltk.stem.html</a> , 可选的工具包括Lancaster Stemmer, Porter Stemmer等知名的英文Stemmer。这里我们使用LancasterStemmer:</p>
+<pre><code>from nltk.stem.lancaster import LancasterStemmer
+st = LancasterStemmer()
+st.stem(&apos;stemmed&apos;)
+#&apos;stem&apos;
+st.stem(&apos;stemming&apos;)
+#&apos;stem&apos;
+st.stem(&apos;stemmer&apos;)
+#&apos;stem&apos;
+st.stem(&apos;running&apos;)
+#&apos;run&apos;
+st.stem(&apos;maximum&apos;)
+#&apos;maxim&apos;
+st.stem(&apos;presumably&apos;)
+#&apos;presum&apos;
+</code></pre><p>让我们调用这个接口来处理上面的课程数据:</p>
+<pre><code>texts_stemmed = [[st.stem(word) for word in docment] for docment in texts_filtered]
+print texts_stemmed[0]
+#[&apos;writ&apos;, &apos;ii&apos;, &apos;rhet&apos;, &apos;compos&apos;, &apos;rhet&apos;, &apos;compos&apos;, &apos;eng&apos;, &apos;sery&apos;, &apos;interact&apos;, &apos;read&apos;, &apos;research&apos;, &apos;compos&apos;, &apos;act&apos;, &apos;along&apos;, &apos;assign&apos;, &apos;design&apos;, &apos;help&apos;, &apos;becom&apos;, &apos;effect&apos;, &apos;consum&apos;, &apos;produc&apos;, &apos;alphabet&apos;, &apos;vis&apos;, &apos;multimod&apos;, &apos;texts.&apos;, &apos;join&apos;, &apos;us&apos;, &apos;becom&apos;, &apos;effect&apos;, &apos;writ&apos;, &apos;...&apos;, &apos;bet&apos;, &apos;citizens.&apos;, &apos;rhet&apos;, &apos;compos&apos;, &apos;cours&apos;, &apos;writ&apos;, &apos;exchang&apos;, &apos;word&apos;, &apos;idea&apos;, &apos;tal&apos;, &apos;support.&apos;, &apos;introduc&apos;, &apos;vary&apos;, &apos;rhet&apos;, &apos;concepts\xe2\x80\x94that&apos;, &apos;idea&apos;, &apos;techn&apos;, &apos;inform&apos;, &apos;persuad&apos;, &apos;audiences\xe2\x80\x94that&apos;, &apos;help&apos;, &apos;becom&apos;, &apos;effect&apos;, &apos;consum&apos;, &apos;produc&apos;, &apos;writ&apos;, &apos;vis&apos;, &apos;multimod&apos;, &apos;texts.&apos;, &apos;class&apos;, &apos;includ&apos;, &apos;short&apos;, &apos;video&apos;, &apos;demonst&apos;, &apos;activities.&apos;, &apos;envid&apos;, &apos;rhet&apos;, &apos;compos&apos;, &apos;learn&apos;, &apos;commun&apos;, &apos;includ&apos;, &apos;enrol&apos;, &apos;cours&apos;, &apos;instructors.&apos;, &apos;bring&apos;, &apos;expert&apos;, &apos;writ&apos;, &apos;rhet&apos;, &apos;cours&apos;, &apos;design&apos;, &apos;design&apos;, &apos;assign&apos;, &apos;cours&apos;, &apos;infrastruct&apos;, &apos;help&apos;, &apos;shar&apos;, &apos;expery&apos;, &apos;writ&apos;, &apos;stud&apos;, &apos;profess&apos;, &apos;us.&apos;, &apos;collab&apos;, &apos;facilit&apos;, &apos;wex&apos;, &apos;writ&apos;, &apos;exchang&apos;, &apos;plac&apos;, &apos;exchang&apos;, &apos;work&apos;, &apos;feedback&apos;]
+</code></pre><p>在我们引入gensim之前，还有一件事要做，去掉在整个语料库中出现次数为1的低频词，测试了一下，不去掉的话对效果有些影响：</p>
+<pre><code>all_stems = sum(texts_stemmed, [])
+stems_once = set(stem for stem in set(all_stems) if all_stems.count(stem) == 
+texts = [[stem for stem in text if stem not in stems_once] for text in texts_stemmed]
+</code></pre><h2 id="3、引入gensim"><a href="#3、引入gensim" class="headerlink" title="3、引入gensim"></a>3、引入gensim</h2><p>有了上述的预处理，我们就可以引入gensim，并快速的做课程相似度的实验了。以下会快速的过一遍流程，具体的可以参考上一节的详细描述。</p>
+<pre><code>from gensim import corpora, models, similarities
+import logging
+logging.basicConfig(format=&apos;%(asctime)s : %(levelname)s : %(message)s&apos;, level=logging.INFO)
+
+dictionary = corpora.Dictionary(texts)
+corpus = [dictionary.doc2bow(text) for text in texts]
+tfidf = models.TfidfModel(corpus)
+corpus_tfidf = tfidf[corpus]
+#这里我训练topic数量为10的LSI模型：
+lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=10)
+
+index = similarities.MatrixSimilarity(lsi[corpus])
+</code></pre><p>基于LSI模型的课程索引建立完毕，我们以Andrew Ng教授的机器学习公开课为例，这门课程在我们的coursera_corpus文件的第211行，也就是：</p>
+<pre><code> print courses_name[210]
+#Machine Learning
+</code></pre><p>现在我们就可以通过lsi模型将这门课程映射到10个topic主题模型空间上，然后和其他课程计算相似度：</p>
+<pre><code>ml_course = texts[210]
+ml_bow = dicionary.doc2bow(ml_course)
+ml_lsi = lsi[ml_bow]
+print ml_lsi
+#[(0, 8.3270084238788673), (1, 0.91295652151975082), (2, -0.28296075112669405), (3, 0.0011599008827843801), (4, -4.1820134980024255), (5, -0.37889856481054851), (6, 2.0446999575052125), (7, 2.3297944485200031), (8, -0.32875594265388536), (9, -0.30389668455507612)]
+
+sims = index[ml_lsi]
+sort_sims = sorted(enumerate(sims), key=lambda item: -item[1])
+
+
+取按相似度排序的前10门课程：
+print sort_sims[0:10]
+#[(210, 1.0), (174, 0.97812241), (238, 0.96428639), (203, 0.96283489), (63, 0.9605484), (189, 0.95390636), (141, 0.94975704), (184, 0.94269753), (111, 0.93654782), (236, 0.93601125)]
+
+第一门课程是它自己:
+print courses_name[210]
+#Machine Learning
+
+第二门课是Coursera上另一位大牛Pedro Domingos机器学习公开课
+print courses_name[174]
+#Machine Learning
+
+第三门课是Coursera的另一位创始人，同样是大牛的Daphne Koller教授的概率图模型公开课：
+print courses_name[238]
+#Probabilistic Graphical Models
+
+第四门课是另一位超级大牛Geoffrey Hinton的神经网络公开课，有同学评价是Deep Learning的必修课。
+print courses_name[203]
+#Neural Networks for Machine Learning
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/w.png" alt="王敏 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/z.png" alt="王敏 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LSA/" rel="tag"># LSA</a>
+          
+            <a href="/tags/LAI/" rel="tag"># LAI</a>
+          
+            <a href="/tags/文本相似度/" rel="tag"># 文本相似度</a>
+          
+            <a href="/tags/主题模型/" rel="tag"># 主题模型</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/29/一些机器学习算法/" rel="next" title="一些机器学习算法">
+                <i class="fa fa-chevron-left"></i> 一些机器学习算法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/04/gensim学习笔记/" rel="prev" title="gensim学习笔记">
+                gensim学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/000.jpg"
+               alt="王敏" />
+          <p class="site-author-name" itemprop="name">王敏</p>
+           
+              <p class="site-description motion-element" itemprop="description">一蓑烟雨任平生</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ynuwm" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/ynuwm" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.weibo.com/jcshaozhu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/justanonymous/answers" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jeyzhang.com/" title="JEY" target="_blank">JEY</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.flickering.cn/" title="FLICK" target="_blank">FLICK</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.52ml.net/" title="52ML" target="_blank">52ML</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.52nlp.cn/" title="52NLP" target="_blank">52NLP</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://52opencourse.com/" title="52OPENC" target="_blank">52OPENC</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/wangxinginnlp/article/details/44890553" title="NLPGROUP" target="_blank">NLPGROUP</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#相关背景资料"><span class="nav-number">1.</span> <span class="nav-text">相关背景资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gensim基本使用"><span class="nav-number">2.</span> <span class="nav-text">gensim基本使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算两个文档的相似度"><span class="nav-number">3.</span> <span class="nav-text">计算两个文档的相似度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、数据准备"><span class="nav-number">3.1.</span> <span class="nav-text">1、数据准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、引入NLTK"><span class="nav-number">3.2.</span> <span class="nav-text">2、引入NLTK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、引入gensim"><span class="nav-number">3.3.</span> <span class="nav-text">3、引入gensim</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王敏</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+  <span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+  <span id="showDays"></span>
+</div>
+
+
+<script>
+	var birthDay = new Date('04/30/2017');
+	var now = new Date();
+	var duration = now.getTime() - birthDay.getTime();
+	var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+	document.getElementById('showDays').innerHTML='本站已运行' + total + '天';
+</script>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cysYjnueo';
+      var conf = 'b92520c5cf51563daa727ea70256e46d';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      $('#local-search-input').focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1309 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="sklearn," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="王敏的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="官网：http://sklearn.lzjqsdd.com/ 1 scikit-learn基础介绍1.1 估计器（Estimator）估计器，很多时候可以直接理解成分类器，主要包含两个函数： ●fit()：训练算法，设置内部参数。接收训练集和类别两个参数。●predict()：预测测试集类别，参数为测试集。大多数scikit-learn估计器接收和输出的数据格式均为numpy数组或类似格式。 1.">
+<meta name="keywords" content="sklearn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sklearn学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/05/27/sklearn学习笔记/index.html">
+<meta property="og:site_name" content="王敏的博客">
+<meta property="og:description" content="官网：http://sklearn.lzjqsdd.com/ 1 scikit-learn基础介绍1.1 估计器（Estimator）估计器，很多时候可以直接理解成分类器，主要包含两个函数： ●fit()：训练算法，设置内部参数。接收训练集和类别两个参数。●predict()：预测测试集类别，参数为测试集。大多数scikit-learn估计器接收和输出的数据格式均为numpy数组或类似格式。 1.">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/sklearn学习笔记/0000.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/sklearn学习笔记/0001.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/sklearn学习笔记/0002.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/sklearn学习笔记/0003.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/sklearn学习笔记/0004.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/sklearn学习笔记/0005.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/sklearn学习笔记/0006.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/27/sklearn学习笔记/0007.png">
+<meta property="og:updated_time" content="2017-06-24T03:15:03.229Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sklearn学习笔记">
+<meta name="twitter:description" content="官网：http://sklearn.lzjqsdd.com/ 1 scikit-learn基础介绍1.1 估计器（Estimator）估计器，很多时候可以直接理解成分类器，主要包含两个函数： ●fit()：训练算法，设置内部参数。接收训练集和类别两个参数。●predict()：预测测试集类别，参数为测试集。大多数scikit-learn估计器接收和输出的数据格式均为numpy数组或类似格式。 1.">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/27/sklearn学习笔记/0000.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/27/sklearn学习笔记/"/>
+
+
+
+
+
+  <title>sklearn学习笔记 | 王敏的博客</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王敏的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">按照自己的方式去度过人生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/27/sklearn学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王敏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/000.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                sklearn学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-27T08:37:39+08:00">
+                2017-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/05/27/sklearn学习笔记/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/05/27/sklearn学习笔记/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>官网：<a href="http://sklearn.lzjqsdd.com/" target="_blank" rel="external">http://sklearn.lzjqsdd.com/</a></p>
+<h1 id="1-scikit-learn基础介绍"><a href="#1-scikit-learn基础介绍" class="headerlink" title="1 scikit-learn基础介绍"></a>1 scikit-learn基础介绍</h1><h2 id="1-1-估计器（Estimator）"><a href="#1-1-估计器（Estimator）" class="headerlink" title="1.1 估计器（Estimator）"></a>1.1 估计器（Estimator）</h2><p>估计器，很多时候可以直接理解成分类器，主要包含两个函数：</p>
+<p>●<strong>fit()</strong>：训练算法，设置内部参数。接收训练集和类别两个参数。<br>●<strong>predict()</strong>：预测测试集类别，参数为测试集。<br>大多数scikit-learn估计器接收和输出的数据格式均为numpy数组或类似格式。</p>
+<h2 id="1-2-转换器（Transformer）"><a href="#1-2-转换器（Transformer）" class="headerlink" title="1.2 转换器（Transformer）"></a>1.2 转换器（Transformer）</h2><p>转换器用于数据预处理和数据转换，主要是三个方法：</p>
+<p>●<strong>fit()</strong>：训练算法，设置内部参数。<br>●<strong>transform()</strong>：数据转换。<br>●<strong>fit_transform()</strong>：合并fit和transform两个方法。</p>
+<h2 id="1-3-流水线（Pipeline）"><a href="#1-3-流水线（Pipeline）" class="headerlink" title="1.3 流水线（Pipeline）"></a>1.3 流水线（Pipeline）</h2><p>sklearn.pipeline包<br>流水线的功能：<br>●跟踪记录各步骤的操作（以方便地重现实验结果）<br>●对各步骤进行一个封装<br>●确保代码的复杂程度不至于超出掌控范围</p>
+<p>基本使用方法</p>
+<p>流水线的输入为一连串的数据挖掘步骤，其中最后一步必须是估计器，前几步是转换器。输入的数据集经过转换器的处理后，输出的结果作为下一步的输入。最后，用位于流水线最后一步的估计器对数据进行分类。<br>每一步都用元组（ ‘名称’，步骤）来表示。现在来创建流水线。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">scaling_pipeline = Pipeline([</div><div class="line">  (&apos;scale&apos;, MinMaxScaler()),</div><div class="line">  (&apos;predict&apos;, KNeighborsClassifier())</div><div class="line">])</div></pre></td></tr></table></figure></p>
+<h2 id="1-4-预处理"><a href="#1-4-预处理" class="headerlink" title="1.4 预处理"></a>1.4 预处理</h2><p>主要在sklearn.preprcessing包下。</p>
+<p>规范化：<br>●MinMaxScaler :最大最小值规范化<br>●Normalizer :使每条数据各特征值的和为1<br>●StandardScaler :为使各特征的均值为0，方差为1</p>
+<p>编码：<br>●LabelEncoder ：把字符串类型的数据转化为整型<br>●OneHotEncoder ：特征用一个二进制数字来表示<br>●Binarizer :为将数值型特征的二值化<br>●MultiLabelBinarizer：多标签二值化</p>
+<h2 id="1-5-特征"><a href="#1-5-特征" class="headerlink" title="1.5 特征"></a>1.5 特征</h2><h3 id="1-5-1-特征抽取"><a href="#1-5-1-特征抽取" class="headerlink" title="1.5.1 特征抽取"></a>1.5.1 特征抽取</h3><p>包：sklearn.feature_extraction<br>特征抽取是数据挖掘任务最为重要的一个环节，一般而言，它对最终结果的影响要高过数据挖掘算法本身。只有先把现实用特征表示出来，才能借助数据挖掘的力量找到问题的答案。特征选择的另一个优点在于：降低真实世界的复杂度，模型比现实更容易操纵。<br>一般最常使用的特征抽取技术都是高度针对具体领域的，对于特定的领域，如图像处理，在过去一段时间已经开发了各种特征抽取的技术，但这些技术在其他领域的应用却非常有限。</p>
+<p>●DictVectorizer： 将dict类型的list数据，转换成numpy array<br>●FeatureHasher ： 特征哈希，相当于一种降维技巧<br>●image：图像相关的特征抽取<br>●text： 文本相关的特征抽取<br>●text.CountVectorizer：将文本转换为每个词出现的个数的向量<br>●text.TfidfVectorizer：将文本转换为tfidf值的向量<br>●text.HashingVectorizer：文本的特征哈希</p>
+<p><strong>示例</strong><br><img src="/2017/05/27/sklearn学习笔记/0000.png" alt="img"><br>CountVectorize只数出现个数<br><img src="/2017/05/27/sklearn学习笔记/0001.png" alt="img"><br><img src="/2017/05/27/sklearn学习笔记/0002.png" alt="img"></p>
+<p>TfidfVectorizer：个数+归一化（不包括idf）<br><img src="/2017/05/27/sklearn学习笔记/0003.png" alt="img"><br>TF-IDF（Term Frequency-Inverse Document Frequency，词频和逆向文件频率）对每个单词做进一步考量。</p>
+<p>TF（词频）的计算很简单，就是针对一个文件t，某个单词Nt 出现在该文档中的频率。比如文档“I love this movie”，单词“love”的TF为1/4。如果去掉停用词“I”和”it“，则为1/2。</p>
+<p>IDF（逆向文件频率）的意义是，对于某个单词t，凡是出现了该单词的文档数Dt，占了全部测试文档D的比例，再求自然对数。</p>
+<p>比如单词“movie“一共出现了5次，而文档总数为12，因此IDF为ln(5/12)。</p>
+<p>很显然，IDF是为了凸显那种出现的少，但是占有强烈感情色彩的词语。比如“movie”这样的词的IDF=ln(12/5)=0.88，远小于“love”的IDF=ln(12/1)=2.48。</p>
+<p>TF-IDF就是把二者简单的乘在一起即可。这样，求出每个文档中，每个单词的TF-IDF，就是我们提取得到的文本特征值。</p>
+<p>sklearn.feature_extraction.DictVectorizer类基于One-Hot Encoding 独热编码提取分类特征；<br>sklearn.feature_extraction.text.CountVectorizer类基于词库模型将文字转换成特征向量；<br>sklearn.feature_extraction.text.TfidfVectorizer类可以统计TF-IDF词频；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># DictVectorizer()将dict类型的list数据转化成numpy array</div><div class="line"># fit()：训练算法，设置内部参数</div><div class="line"># transform()：数据转换</div><div class="line"># fit_transform()：合并fit和transform两个方法</div><div class="line"></div><div class="line">from sklearn.feature_extraction import DictVectorizer</div><div class="line">onehot_encoder = DictVectorizer()</div><div class="line">instances = [&#123;&apos;city&apos;: &apos;New York&apos;&#125;,&#123;&apos;city&apos;: &apos;Los Angeles&apos;&#125;, &#123;&apos;city&apos;: &apos;San Antonio&apos;&#125;]</div><div class="line">print(onehot_encoder.fit_transform(instances).toarray())</div><div class="line"></div><div class="line">&apos;&apos;&apos;</div><div class="line">otu:</div><div class="line">[[ 0.  1.  0.]</div><div class="line"> [ 1.  0.  0.]</div><div class="line"> [ 0.  0.  1.]]</div><div class="line">&apos;&apos;&apos;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># CountVectorizer类通过正则表达式用空格分割句子，然后抽取长度大于等于2的字母序列</div><div class="line"></div><div class="line">from sklearn.feature_extraction.text import CountVectorizer</div><div class="line">corpus = [  </div><div class="line">    &apos;Today the weather is sunny&apos;,  </div><div class="line">    &apos;Sunny day weather is suitable to exercise &apos;,  </div><div class="line">    &apos;I ate a Hotdog&apos;  </div><div class="line">]  </div><div class="line">vectorizer = CountVectorizer()  </div><div class="line">print (vectorizer.fit_transform(corpus).todense())  </div><div class="line">print (vectorizer.vocabulary_)  </div><div class="line"></div><div class="line">&apos;&apos;&apos;</div><div class="line">out:</div><div class="line">[[0 0 0 0 1 0 1 1 0 1 1]</div><div class="line"> [0 1 1 0 1 1 1 0 1 0 1]</div><div class="line"> [1 0 0 1 0 0 0 0 0 0 0]]</div><div class="line">&#123;u&apos;ate&apos;: 0, u&apos;is&apos;: 4, u&apos;sunny&apos;: 6, u&apos;to&apos;: 8, u&apos;weather&apos;: 10, u&apos;today&apos;: 9, u&apos;the&apos;: 7, u&apos;suitable&apos;: 5, u&apos;day&apos;: 1, u&apos;exercise&apos;: 2, u&apos;hotdog&apos;: 3&#125;</div><div class="line">&apos;&apos;&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">from sklearn.feature_extraction.text import TfidfVectorizer  </div><div class="line">corpus = [  </div><div class="line">&apos;The dog ate a sandwich and I ate a sandwich&apos;,  </div><div class="line">&apos;The wizard transfigured a sandwich&apos;  </div><div class="line">]  </div><div class="line">vectorizer = TfidfVectorizer(stop_words=&apos;english&apos;)  </div><div class="line">print(vectorizer.fit_transform(corpus).todense())  </div><div class="line">print(vectorizer.vocabulary_)  </div><div class="line">  </div><div class="line">out:  </div><div class="line">[[ 0.75458397  0.37729199  0.53689271  0.          0.        ]  </div><div class="line"> [ 0.          0.          0.44943642  0.6316672   0.6316672 ]]  </div><div class="line">&#123;&apos;wizard&apos;: 4, &apos;transfigured&apos;: 3, &apos;ate&apos;: 0, &apos;dog&apos;: 1, &apos;sandwich&apos;: 2&#125;  </div><div class="line">#通过TF-IDF加权之后，我们会发现在文集中较常见的词，如sandwich被调整了。</div></pre></td></tr></table></figure>
+<h2 id="实例说明"><a href="#实例说明" class="headerlink" title="实例说明"></a>实例说明</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-  </div><div class="line">import scipy as sp  </div><div class="line">import numpy as np  </div><div class="line">from sklearn.datasets import load_files  </div><div class="line">from sklearn.cross_validation import train_test_split  </div><div class="line">from sklearn.feature_extraction.text import  TfidfVectorizer  </div><div class="line">  </div><div class="line">movie_reviews = load_files(&apos;data&apos;)    </div><div class="line">doc_terms_train, doc_terms_test, y_train, y_test = train_test_split(movie_reviews.data, movie_reviews.target, test_size = 0.3)  </div><div class="line"></div><div class="line">count_vec = TfidfVectorizer(binary = False, decode_error = &apos;ignore&apos;,stop_words = &apos;english&apos;)  </div><div class="line">x_train = count_vec.fit_transform(doc_terms_train)  </div><div class="line">x_test  = count_vec.transform(doc_terms_test)  </div><div class="line">x       = count_vec.transform(movie_reviews.data)  </div><div class="line">y       = movie_reviews.target  </div><div class="line">print(doc_terms_train)  </div><div class="line">print(count_vec.get_feature_names())  </div><div class="line">print(x_train.toarray())  </div><div class="line">print(movie_reviews.target) </div><div class="line"></div><div class="line">&apos;&apos;&apos;</div><div class="line">词频的计算使用的是sklearn的TfidfVectorizer。这个类继承于CountVectorizer，在后者基本的词频统计基础上增加了如TF-IDF之类的功能。</div><div class="line"></div><div class="line">我们会发现这里计算的结果跟我们之前计算不太一样。因为这里count_vec构造时默认传递了max_df=1，因此TF-IDF都做了规格化处理，以便将所有值约束在[0,1]之间。</div><div class="line"></div><div class="line">count_vec.fit_transform的结果是一个巨大的矩阵。可以看到上表中有大量的0，因此sklearn在内部实现上使用了稀疏矩阵。本例子数据较小。</div><div class="line">&apos;&apos;&apos;</div></pre></td></tr></table></figure>
+<p>data地址：<br><a href="http://pan.baidu.com/s/1bpEN00v" target="_blank" rel="external">http://pan.baidu.com/s/1bpEN00v</a></p>
+<h3 id="1-5-2-特征选择"><a href="#1-5-2-特征选择" class="headerlink" title="1.5.2 特征选择"></a>1.5.2 特征选择</h3><p>包：sklearn.feature_selection<br>特征选择的原因如下：<br>(1)降低复杂度<br>(2)降低噪音<br>(3)增加模型可读性</p>
+<p>●VarianceThreshold： 删除特征值的方差达不到最低标准的特征<br>●SelectKBest： 返回k个最佳特征<br>●SelectPercentile： 返回表现最佳的前r%个特征<br>单个特征和某一类别之间相关性的计算方法有很多。最常用的有卡方检验（χ2）。其他方法还有互信息和信息熵。</p>
+<p>●chi2： 卡方检验（χ2）</p>
+<h2 id="1-6-降维"><a href="#1-6-降维" class="headerlink" title="1.6 降维"></a>1.6 降维</h2><p>包：sklearn.decomposition</p>
+<p>●主成分分析算法（Principal Component Analysis， PCA）的目的是找到能用较少信息描述数据集的特征组合。它意在发现彼此之间没有相关性、能够描述数据集的特征，确切说这些特征的方差跟整体方差没有多大差距，这样的特征也被称为主成分。这也就意味着，借助这种方法，就能通过更少的特征捕获到数据集的大部分信息。</p>
+<h2 id="1-7-组合"><a href="#1-7-组合" class="headerlink" title="1.7 组合"></a>1.7 组合</h2><p>包：sklearn.ensemble<br>组合技术即通过聚集多个分类器的预测来提高分类准确率。<br>常用的组合分类器方法：<br>(1)通过处理训练数据集。即通过某种抽样分布，对原始数据进行再抽样，得到多个训练集。常用的方法有装袋（bagging）和提升（boosting）。<br>(2)通过处理输入特征。即通过选择输入特征的子集形成每个训练集。适用于有大量冗余特征的数据集。随机森林（Random forest）就是一种处理输入特征的组合方法。<br>(3)通过处理类标号。适用于多分类的情况，将类标号随机划分成两个不相交的子集，再把问题变为二分类问题，重复构建多次模型，进行分类投票。</p>
+<p>●BaggingClassifier： Bagging分类器组合<br>●BaggingRegressor： Bagging回归器组合<br>●AdaBoostClassifier： AdaBoost分类器组合<br>●AdaBoostRegressor： AdaBoost回归器组合<br>●GradientBoostingClassifier：GradientBoosting分类器组合<br>●GradientBoostingRegressor： GradientBoosting回归器组合<br>●ExtraTreeClassifier：ExtraTree分类器组合<br>●ExtraTreeRegressor： ExtraTree回归器组合<br>●RandomTreeClassifier：随机森林分类器组合<br>●RandomTreeRegressor： 随机森林回归器组合</p>
+<p>使用举例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">AdaBoostClassifier(DecisionTreeClassifier(max_depth=1),</div><div class="line">algorithm=&quot;SAMME&quot;,</div><div class="line">n_estimators=200)</div></pre></td></tr></table></figure></p>
+<p><strong>解释</strong><br><strong>装袋（bagging）</strong>：根据均匀概率分布从数据集中重复抽样（有放回），每个自助样本集和原数据集一样大，每个自助样本集含有原数据集大约63%的数据。训练k个分类器，测试样本被指派到得票最高的类。<br><strong>提升（boosting）</strong>：通过给样本设置不同的权值，每轮迭代调整权值。不同的提升算法之间的差别，一般是（1）如何更新样本的权值，（2）如何组合每个分类器的预测。其中Adaboost中，样本权值是增加那些被错误分类的样本的权值，分类器C_i的重要性依赖于它的错误率。<br>Boosting主要关注降低偏差，因此Boosting能基于泛化性能相当弱的学习器构建出很强的集成；Bagging主要关注降低方差，因此它在不剪枝的决策树、神经网络等学习器上效用更为明显。偏差指的是算法的期望预测与真实预测之间的偏差程度，反应了模型本身的拟合能力；方差度量了同等大小的训练集的变动导致学习性能的变化，刻画了数据扰动所导致的影响。</p>
+<h2 id="1-8-模型评估（度量）"><a href="#1-8-模型评估（度量）" class="headerlink" title="1.8 模型评估（度量）"></a>1.8 模型评估（度量）</h2><p>包：<strong>sklearn.metrics</strong><br>sklearn.metrics包含评分方法、性能度量、成对度量和距离计算。<br><strong>分类结果度量</strong><br>参数大多是y_true和y_pred。</p>
+<p>●accuracy_score：分类准确度<br>●condusion_matrix ：分类混淆矩阵<br>●classification_report：分类报告<br>●precision_recall_fscore_support：计算精确度、召回率、f、支持率<br>●jaccard_similarity_score：计算jcaard相似度<br>●hamming_loss：计算汉明损失<br>●zero_one_loss：0-1损失<br>●hinge_loss：计算hinge损失<br>●log_loss：计算log损失<br>其中，F1是以<strong>每个类别</strong>为基础进行定义的，包括两个概念：准确率（precision）和召回率（recall）。准确率是指预测结果属于某一类的个体，实际属于该类的比例。召回率是被正确预测为某类的个体，与数据集中该类个体总数的比例。F1是准确率和召回率的调和平均数。</p>
+<p><strong>回归结果度量</strong><br>●explained_varicance_score：可解释方差的回归评分函数<br>●mean_absolute_error：平均绝对误差<br>●mean_squared_error：平均平方误差</p>
+<p><strong>多标签的度量</strong><br>●coverage_error：涵盖误差<br>●label_ranking_average_precision_score：计算基于排名的平均误差Label ●ranking average precision (LRAP)</p>
+<p><strong>聚类的度量</strong><br>●adjusted_mutual_info_score：调整的互信息评分<br>●silhouette_score：所有样本的轮廓系数的平均值<br>●silhouette_sample：所有样本的轮廓系数</p>
+<h2 id="1-9-交叉验证"><a href="#1-9-交叉验证" class="headerlink" title="1.9 交叉验证"></a>1.9 交叉验证</h2><p>包：sklearn.cross_validation</p>
+<p>●KFold：K-Fold交叉验证迭代器。接收元素个数、fold数、是否清洗<br>●LeaveOneOut：LeaveOneOut交叉验证迭代器<br>●LeavePOut：LeavePOut交叉验证迭代器<br>●LeaveOneLableOut：LeaveOneLableOut交叉验证迭代器<br>●LeavePLabelOut：LeavePLabelOut交叉验证迭代器</p>
+<p>LeaveOneOut(n) 相当于 KFold(n, n_folds=n) 相当于LeavePOut(n, p=1)。LeaveP和LeaveOne差别在于leave的个数，也就是测试集的尺寸。LeavePLabel和LeaveOneLabel差别在于leave的Label的种类的个数LeavePLabel这种设计是针对可能存在第三方的Label，比如我们的数据是一些季度的数据。那么很自然的一个想法就是把1,2,3个季度的数据当做训练集，第4个季度的数据当做测试集。这个时候只要输入每个样本对应的季度Label，就可以实现这样的功能。<br>以下是实验代码，尽量自己多实验去理解。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">import numpy as np</div><div class="line">import sklearnfrom sklearn</div><div class="line">import cross_validation</div><div class="line">X = np.array([[1, 2], [3, 4], [5, 6], [7, 8],[9, 10]])</div><div class="line">y = np.array([1, 2, 1, 2, 3])</div><div class="line">def show_cross_val(method):    </div><div class="line">  if method == &quot;lolo&quot;:        </div><div class="line">    labels = np.array([&quot;summer&quot;, &quot;winter&quot;, &quot;summer&quot;, &quot;winter&quot;, &quot;spring&quot;])        </div><div class="line">    cv = cross_validation.LeaveOneLabelOut(labels)          </div><div class="line">  elif method == &apos;lplo&apos;:        </div><div class="line">    labels = np.array([&quot;summer&quot;, &quot;winter&quot;, &quot;summer&quot;, &quot;winter&quot;, &quot;spring&quot;])        </div><div class="line">    cv = cross_validation.LeavePLabelOut(labels,p=2)    </div><div class="line">  elif method == &apos;loo&apos;:        </div><div class="line">    cv = cross_validation.LeaveOneOut(n=len(y))    </div><div class="line">  elif method == &apos;lpo&apos;:        </div><div class="line">    cv = cross_validation.LeavePOut(n=len(y),p=3)    </div><div class="line">  for train_index, test_index in cv:        </div><div class="line">    print(&quot;TRAIN:&quot;, train_index, &quot;TEST:&quot;, test_index)        </div><div class="line">    X_train, X_test = X[train_index], X[test_index]        </div><div class="line">    y_train, y_test = y[train_index], y[test_index]        </div><div class="line">    print &quot;X_train: &quot;,X_train        </div><div class="line">    print &quot;y_train: &quot;, y_train        </div><div class="line">    print &quot;X_test: &quot;,X_test        </div><div class="line">    print &quot;y_test: &quot;,y_test</div><div class="line">if __name__ == &apos;__main__&apos;:    </div><div class="line">  show_cross_val(&quot;lpo&quot;)</div></pre></td></tr></table></figure></p>
+<p><strong>常用方法</strong><br>●train_test_split：分离训练集和测试集（不是K-Fold）<br>●cross_val_score：交叉验证评分，可以指认cv为上面的类的实例<br>●cross_val_predict：交叉验证的预测。</p>
+<h2 id="1-10-网格搜索"><a href="#1-10-网格搜索" class="headerlink" title="1.10 网格搜索"></a>1.10 网格搜索</h2><p>包：<strong>sklearn.grid_search</strong><br>网格搜索最佳参数</p>
+<p>●GridSearchCV：搜索指定参数网格中的最佳参数<br>●ParameterGrid：参数网格<br>●ParameterSampler：用给定分布生成参数的生成器<br>●RandomizedSearchCV：超参的随机搜索<br>通过best<em>estimator</em>.get_params()方法，获取最佳参数。</p>
+<h2 id="1-11-多分类、多标签分类"><a href="#1-11-多分类、多标签分类" class="headerlink" title="1.11 多分类、多标签分类"></a>1.11 多分类、多标签分类</h2><p>包：<strong>sklearn.multiclass</strong></p>
+<p>●OneVsRestClassifier：1-rest多分类（多标签）策略<br>●OneVsOneClassifier：1-1多分类策略<br>●OutputCodeClassifier：1个类用一个二进制码表示<br>示例代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">from sklearn import metrics</div><div class="line">from sklearn import cross_validation</div><div class="line">from sklearn.svm import SVC</div><div class="line">from sklearn.multiclass import OneVsRestClassifier</div><div class="line">from sklearn.preprocessing import MultiLabelBinarizer</div><div class="line">import numpy as np</div><div class="line">from numpy import random</div><div class="line">X=np.arange(15).reshape(5,3)</div><div class="line">y=np.arange(5)</div><div class="line">Y_1 = np.arange(5)</div><div class="line">random.shuffle(Y_1)</div><div class="line">Y_2 = np.arange(5)</div><div class="line">random.shuffle(Y_2)</div><div class="line">Y = np.c_[Y_1,Y_2]</div><div class="line">def multiclassSVM():</div><div class="line">  X_train, X_test, y_train, y_test = cross_validation.train_test_split(X, y, test_size=0.2,random_state=0)</div><div class="line">  model = OneVsRestClassifier(SVC())</div><div class="line">  model.fit(X_train, y_train)</div><div class="line">  predicted = model.predict(X_test)</div><div class="line">  print predicted</div><div class="line">def multilabelSVM():</div><div class="line">  Y_enc = MultiLabelBinarizer().fit_transform(Y)</div><div class="line">  X_train, X_test, Y_train, Y_test = cross_validation.train_test_split(X, Y_enc, test_size=0.2, random_state=0)</div><div class="line">  model = OneVsRestClassifier(SVC())</div><div class="line">  model.fit(X_train, Y_train)</div><div class="line">  predicted = model.predict(X_test)</div><div class="line">  print predicted</div><div class="line">if __name__ == &apos;__main__&apos;:</div><div class="line">  multiclassSVM()</div><div class="line">  # multilabelSVM()</div></pre></td></tr></table></figure></p>
+<p>上面的代码测试了svm在OneVsRestClassifier的包装下，分别处理多分类和多标签的情况。特别注意，在多标签的情况下，输入必须是二值化的。所以需要MultiLabelBinarizer()先处理。</p>
+<h1 id="2-具体模型"><a href="#2-具体模型" class="headerlink" title="2 具体模型"></a>2 具体模型</h1><h2 id="2-1-朴素贝叶斯（Naive-Bayes）"><a href="#2-1-朴素贝叶斯（Naive-Bayes）" class="headerlink" title="2.1 朴素贝叶斯（Naive Bayes）"></a>2.1 朴素贝叶斯（Naive Bayes）</h2><p>包：**sklearn.cross_validation<br><img src="/2017/05/27/sklearn学习笔记/0004.png" alt="img"><br>朴素贝叶斯的特点是分类速度快，分类效果不一定是最好的。</p>
+<p>●GasussianNB：高斯分布的朴素贝叶斯<br>●MultinomialNB：多项式分布的朴素贝叶斯<br>●BernoulliNB：伯努利分布的朴素贝叶斯<br>所谓使用什么分布的朴素贝叶斯，就是假设P(x_i|y)是符合哪一种分布，比如可以假设其服从高斯分布，然后用最大似然法估计高斯分布的参数。<br><img src="/2017/05/27/sklearn学习笔记/0005.png" alt="img"><br>高斯分布<center></center></p>
+<p><img src="/2017/05/27/sklearn学习笔记/0006.png" alt="img"><br>多项式分布<center></center></p>
+<p><img src="/2017/05/27/sklearn学习笔记/0007.png" alt="img"><br>伯努利分布<center></center></p>
+<h1 id="3-scikit-learn扩展"><a href="#3-scikit-learn扩展" class="headerlink" title="3 scikit-learn扩展"></a>3 scikit-learn扩展</h1><h2 id="3-0-概览"><a href="#3-0-概览" class="headerlink" title="3.0 概览"></a>3.0 概览</h2><p>具体的扩展，通常要继承sklearn.base包下的类。</p>
+<p>●BaseEstimator： 估计器的基类<br>●ClassifierMixin ：分类器的混合类<br>●ClusterMixin：聚类器的混合类<br>●RegressorMixin ：回归器的混合类<br>●TransformerMixin ：转换器的混合类</p>
+<p>关于什么是Mixin（混合类），具体可以看这个<a href="https://www.zhihu.com/question/20778853" rel="external" color="blue" target="_blank">知乎链接</a>。简单地理解，就是带有实现方法的接口，可以将其看做是组合模式的一种实现。举个例子，比如说常用的TfidfTransformer，继承了BaseEstimator， TransformerMixin，因此它的基本功能就是单一职责的估计器和转换器的组合。</p>
+<h2 id="3-1-创建自己的转换器"><a href="#3-1-创建自己的转换器" class="headerlink" title="3.1 创建自己的转换器"></a>3.1 创建自己的转换器</h2><p>在特征抽取的时候，经常会发现自己的一些数据预处理的方法，sklearn里可能没有实现，但若直接在数据上改，又容易将代码弄得混乱，难以重现实验。这个时候最好自己创建一个转换器，在后面将这个转换器放到pipeline里，统一管理。<br>例如《Python数据挖掘入门与实战》书中的例子，我们想接收一个numpy数组，根据其均值将其离散化，任何高于均值的特征值替换为1，小于或等于均值的替换为0。<br>代码实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">from sklearn.base import TransformerMixin</div><div class="line">from sklearn.utils import as_float_array</div><div class="line"></div><div class="line">class MeanDiscrete(TransformerMixin):</div><div class="line"></div><div class="line">  #计算出数据集的均值，用内部变量保存该值。  </div><div class="line">  def fit(self, X, y=None):</div><div class="line">        X = as_float_array(X)</div><div class="line">        self.mean = np.mean(X, axis=0)</div><div class="line">        #返回self，确保在转换器中能够进行链式调用（例如调用transformer.fit(X).transform(X)）</div><div class="line">        return self</div><div class="line"></div><div class="line">    def transform(self, X):</div><div class="line">        X = as_float_array(X)</div><div class="line">        assert X.shape[1] == self.mean.shape[0]</div><div class="line">        return X &gt; self.mean</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/w.png" alt="王敏 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/z.png" alt="王敏 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/sklearn/" rel="tag"># sklearn</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/24/SRILM训练语言模型实战/" rel="next" title="SRILM训练语言模型实战">
+                <i class="fa fa-chevron-left"></i> SRILM训练语言模型实战
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/27/tensorflow之神经网络一/" rel="prev" title="TensorFlow之神经网络(一)">
+                TensorFlow之神经网络(一) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/000.jpg"
+               alt="王敏" />
+          <p class="site-author-name" itemprop="name">王敏</p>
+           
+              <p class="site-description motion-element" itemprop="description">一蓑烟雨任平生</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ynuwm" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/ynuwm" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.weibo.com/jcshaozhu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/justanonymous/answers" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jeyzhang.com/" title="JEY" target="_blank">JEY</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.flickering.cn/" title="FLICK" target="_blank">FLICK</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.52ml.net/" title="52ML" target="_blank">52ML</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.52nlp.cn/" title="52NLP" target="_blank">52NLP</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://52opencourse.com/" title="52OPENC" target="_blank">52OPENC</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/wangxinginnlp/article/details/44890553" title="NLPGROUP" target="_blank">NLPGROUP</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-scikit-learn基础介绍"><span class="nav-number">1.</span> <span class="nav-text">1 scikit-learn基础介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-估计器（Estimator）"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 估计器（Estimator）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-转换器（Transformer）"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 转换器（Transformer）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-流水线（Pipeline）"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 流水线（Pipeline）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-预处理"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-特征"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-特征抽取"><span class="nav-number">1.5.1.</span> <span class="nav-text">1.5.1 特征抽取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例说明"><span class="nav-number">1.6.</span> <span class="nav-text">实例说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-2-特征选择"><span class="nav-number">1.6.1.</span> <span class="nav-text">1.5.2 特征选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-降维"><span class="nav-number">1.7.</span> <span class="nav-text">1.6 降维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-组合"><span class="nav-number">1.8.</span> <span class="nav-text">1.7 组合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-8-模型评估（度量）"><span class="nav-number">1.9.</span> <span class="nav-text">1.8 模型评估（度量）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-9-交叉验证"><span class="nav-number">1.10.</span> <span class="nav-text">1.9 交叉验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-10-网格搜索"><span class="nav-number">1.11.</span> <span class="nav-text">1.10 网格搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-11-多分类、多标签分类"><span class="nav-number">1.12.</span> <span class="nav-text">1.11 多分类、多标签分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-具体模型"><span class="nav-number">2.</span> <span class="nav-text">2 具体模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-朴素贝叶斯（Naive-Bayes）"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 朴素贝叶斯（Naive Bayes）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-scikit-learn扩展"><span class="nav-number">3.</span> <span class="nav-text">3 scikit-learn扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-0-概览"><span class="nav-number">3.1.</span> <span class="nav-text">3.0 概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-创建自己的转换器"><span class="nav-number">3.2.</span> <span class="nav-text">3.1 创建自己的转换器</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王敏</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+  <span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+  <span id="showDays"></span>
+</div>
+
+
+<script>
+	var birthDay = new Date('04/30/2017');
+	var now = new Date();
+	var duration = now.getTime() - birthDay.getTime();
+	var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+	document.getElementById('showDays').innerHTML='本站已运行' + total + '天';
+</script>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cysYjnueo';
+      var conf = 'b92520c5cf51563daa727ea70256e46d';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      $('#local-search-input').focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
