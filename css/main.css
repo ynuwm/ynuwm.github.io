@@ -475,7 +475,7 @@ pre,
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 15px;
   color: #ccc;
   background: #2d2d2d;
   line-height: 1.6;
@@ -490,7 +490,7 @@ code {
   color: #555;
   background: #eee;
   border-radius: 3px;
-  font-size: 13px;
+  font-size: 15px;
 }
 pre code {
   padding: 0;
@@ -1809,7 +1809,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a64a09;
+  background: #6f1aac;
 }
 .links-of-blogroll {
   font-size: 13px;
