@@ -4,24 +4,28 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/06/13/%E6%8C%A5%E6%8C%A5%E6%89%8B/</loc>
+    <loc>http://yoursite.com/2017/11/24/%E6%8A%8A%E4%BF%A1%E9%80%81%E7%BB%99%E5%8A%A0%E8%A5%BF%E4%BA%9A/</loc>
     <lastmod>2017-12-01T09:03:47.000Z</lastmod>
     <data>
         <display>
-        <title>挥挥手</title>
-        <pubTime>2017-06-13T01:02:38.000Z</pubTime>
+        <title>把信送给加西亚</title>
+        <pubTime>2017-11-24T12:25:17.000Z</pubTime>
         
-        <tag>心情</tag>
+        <tag>职场</tag>
          
          
            
              
-              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
+              <breadCrumb title="读书笔记" url="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
     </url>
 
+    
+    
+    
+    
     
     
   <url>
@@ -43,6 +47,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://yoursite.com/2017/07/04/Nokia-Lumia-1020-%E6%8B%8D%E6%91%84%E6%8A%80%E5%B7%A7/</loc>
@@ -106,6 +111,28 @@
     </url>
 
     
+    
+    
+  <url>
+    <loc>http://yoursite.com/2017/06/13/%E6%8C%A5%E6%8C%A5%E6%89%8B/</loc>
+    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>挥挥手</title>
+        <pubTime>2017-06-13T01:02:38.000Z</pubTime>
+        
+        <tag>心情</tag>
+         
+         
+           
+             
+              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://yoursite.com/2017/05/27/tensorflow%E4%B9%8B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%80/</loc>
     <lastmod>2017-12-01T09:03:47.000Z</lastmod>
@@ -133,86 +160,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/06/24/%E4%BB%8A%E5%A4%A9%E5%BC%80%E6%AF%95%E4%B8%9A%E5%85%B8%E7%A4%BC/</loc>
-    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>One Question</title>
-        <pubTime>2017-06-24T03:18:14.000Z</pubTime>
-        
-        <tag>AlphaGo</tag>
-         
-         
-           
-             
-              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/05/23/%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何选择合适的机器学习算法</title>
-        <pubTime>2017-05-23T08:47:27.000Z</pubTime>
-        
-        <tag>机器学习</tag>
-         
-         
-           
-             
-              <breadCrumb title="归纳总结" url="http://yoursite.com/categories/%E5%BD%92%E7%BA%B3%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/11/24/%E6%8A%8A%E4%BF%A1%E9%80%81%E7%BB%99%E5%8A%A0%E8%A5%BF%E4%BA%9A/</loc>
-    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>把信送给加西亚</title>
-        <pubTime>2017-11-24T12:25:17.000Z</pubTime>
-        
-        <tag>职场</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书笔记" url="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/10/30/Faker%E9%87%87%E8%AE%BF%E7%9A%84%E6%97%B6%E5%80%99%E8%AF%B4/</loc>
-    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>Faker采访的时候说</title>
-        <pubTime>2017-10-30T08:15:19.000Z</pubTime>
-        
-        <tag>LOL</tag>
-         
-         
-           
-             
-              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/05/14/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8AutoEncoder/</loc>
     <lastmod>2017-12-01T09:03:47.000Z</lastmod>
     <data>
@@ -230,6 +177,26 @@
            
              
               <breadCrumb title="Keras" url="http://yoursite.com/categories/Keras/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/06/24/%E4%BB%8A%E5%A4%A9%E5%BC%80%E6%AF%95%E4%B8%9A%E5%85%B8%E7%A4%BC/</loc>
+    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>One Question</title>
+        <pubTime>2017-06-24T03:18:14.000Z</pubTime>
+        
+        <tag>AlphaGo</tag>
+         
+         
+           
+             
+              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -262,27 +229,20 @@
     </url>
 
     
-    
-    
-    
-    
-    
-    
-    
   <url>
-    <loc>http://yoursite.com/2017/10/10/BAT%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%9D%A2%E8%AF%951000%E9%A2%98%E7%B3%BB%E5%88%97/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <loc>http://yoursite.com/2017/10/30/Faker%E9%87%87%E8%AE%BF%E7%9A%84%E6%97%B6%E5%80%99%E8%AF%B4/</loc>
+    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
     <data>
         <display>
-        <title>BAT机器学习面试1000题系列</title>
-        <pubTime>2017-10-10T12:03:00.000Z</pubTime>
+        <title>Faker采访的时候说</title>
+        <pubTime>2017-10-30T08:15:19.000Z</pubTime>
         
-        <tag>面试</tag>
+        <tag>LOL</tag>
          
          
            
              
-              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -290,19 +250,59 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/09/06/%E4%BB%8A%E5%AE%B5%E9%85%92%E9%86%92%E4%BD%95%E5%A4%84/</loc>
+    <loc>http://yoursite.com/2017/05/23/%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何选择合适的机器学习算法</title>
+        <pubTime>2017-05-23T08:47:27.000Z</pubTime>
+        
+        <tag>机器学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="归纳总结" url="http://yoursite.com/categories/%E5%BD%92%E7%BA%B3%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/11/15/%E8%BF%99%E5%87%A0%E5%A4%A9%E7%9A%84%E4%BA%91%E5%A4%A7/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>今宵酒醒何处</title>
-        <pubTime>2017-09-06T07:42:20.000Z</pubTime>
+        <title>这几天的云大</title>
+        <pubTime>2017-11-15T04:14:44.000Z</pubTime>
         
-        <tag>周传雄</tag>
+        <tag>云大</tag>
          
          
            
              
               <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/27/sklearn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>sklearn学习笔记</title>
+        <pubTime>2017-05-27T00:37:39.000Z</pubTime>
+        
+        <tag>sklearn</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://yoursite.com/categories/Python/"/>
           
         </display>
     </data>
@@ -330,14 +330,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/09/13/913%E5%91%A8%E4%BC%9A%E5%B0%8F%E7%BB%93/</loc>
+    <loc>http://yoursite.com/2017/09/06/%E4%BB%8A%E5%AE%B5%E9%85%92%E9%86%92%E4%BD%95%E5%A4%84/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>913周会小结</title>
-        <pubTime>2017-09-13T02:20:19.000Z</pubTime>
+        <title>今宵酒醒何处</title>
+        <pubTime>2017-09-06T07:42:20.000Z</pubTime>
         
-        <tag>开会记录</tag>
+        <tag>周传雄</tag>
          
          
            
@@ -350,81 +350,21 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/07/14/%E5%A2%99%E5%A4%96%E7%9A%84%E4%B8%96%E7%95%8C/</loc>
+    <loc>http://yoursite.com/2017/05/29/%E4%B8%80%E4%BA%9B%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>墙外的世界</title>
-        <pubTime>2017-07-14T03:37:16.000Z</pubTime>
+        <title>一些机器学习算法</title>
+        <pubTime>2017-05-29T02:05:30.000Z</pubTime>
         
-        <tag>VPN</tag>
+        <tag>机器学习</tag>
          
-        <tag>hosts</tag>
-         
-         
-           
-             
-              <breadCrumb title="翻墙" url="http://yoursite.com/categories/%E7%BF%BB%E5%A2%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/05/17/Deepin-15-4-%E6%90%AD%E5%BB%BALAMP%E7%8E%AF%E5%A2%83-Python%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Deepin 15.4 搭建LAMP环境&Python操作数据库</title>
-        <pubTime>2017-05-17T14:14:05.000Z</pubTime>
-        
-        <tag>环境配置</tag>
+        <tag>算法</tag>
          
          
            
              
               <breadCrumb title="Python" url="http://yoursite.com/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/07/20/719%E5%91%A8%E8%80%81%E5%B8%88%E5%BC%80%E4%BC%9A%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>719周老师开会记录</title>
-        <pubTime>2017-07-20T00:02:50.000Z</pubTime>
-        
-        <tag>开会记录</tag>
-         
-         
-           
-             
-              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/05/10/R%E8%AF%AD%E8%A8%80%E4%B9%8Bggplot%E7%BB%98%E5%9B%BE/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>R语言之ggplot绘图</title>
-        <pubTime>2017-05-10T11:55:41.000Z</pubTime>
-        
-        <tag>R</tag>
-         
-         
-           
-             
-              <breadCrumb title="R语言" url="http://yoursite.com/categories/R%E8%AF%AD%E8%A8%80/"/>
           
         </display>
     </data>
@@ -512,6 +452,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/05/06/%E5%9B%9E%E5%8E%BB%E5%90%A7/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>回去吧</title>
+        <pubTime>2017-05-06T02:58:51.000Z</pubTime>
+        
+        <tag>心情</tag>
+         
+         
+           
+             
+              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/10/08/%E7%9F%A5%E4%B9%8E%E7%9C%8B%E5%B1%B1%E6%9D%AF%E5%A4%BA%E5%86%A0%E8%AE%B0-%E8%BD%AC/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
@@ -525,30 +485,6 @@
            
              
               <breadCrumb title="深度学习" url="http://yoursite.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/05/24/SRILM%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>SRILM训练语言模型实战</title>
-        <pubTime>2017-05-24T11:41:29.000Z</pubTime>
-        
-        <tag>SRILM</tag>
-         
-        <tag>ngram</tag>
-         
-        <tag>LM</tag>
-         
-         
-           
-             
-              <breadCrumb title="语言模型" url="http://yoursite.com/categories/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"/>
           
         </display>
     </data>
@@ -596,79 +532,21 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/11/15/%E8%BF%99%E5%87%A0%E5%A4%A9%E7%9A%84%E4%BA%91%E5%A4%A7/</loc>
+    <loc>http://yoursite.com/2017/07/14/%E5%A2%99%E5%A4%96%E7%9A%84%E4%B8%96%E7%95%8C/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>这几天的云大</title>
-        <pubTime>2017-11-15T04:14:44.000Z</pubTime>
+        <title>墙外的世界</title>
+        <pubTime>2017-07-14T03:37:16.000Z</pubTime>
         
-        <tag>云大</tag>
+        <tag>VPN</tag>
+         
+        <tag>hosts</tag>
          
          
            
              
-              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/11/15/%E7%BB%BC%E8%BF%B0%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86NLP/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>综述自然语言处理NLP</title>
-        <pubTime>2017-11-15T02:42:33.000Z</pubTime>
-        
-        <tag>NLP</tag>
-         
-         
-           
-             
-              <breadCrumb title="深度学习" url="http://yoursite.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/04/30/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%BB%93/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo搭建博客小结</title>
-        <pubTime>2017-04-30T12:27:07.000Z</pubTime>
-        
-        <tag>技术</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/05/10/Win10-Tensorflow-keras-GPU%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Win10+Tensorflow+keras+GPU环境配置</title>
-        <pubTime>2017-05-10T00:48:35.000Z</pubTime>
-        
-        <tag>环境配置</tag>
-         
-         
-           
-             
-              <breadCrumb title="TensorFlow" url="http://yoursite.com/categories/TensorFlow/"/>
+              <breadCrumb title="翻墙" url="http://yoursite.com/categories/%E7%BF%BB%E5%A2%99/"/>
           
         </display>
     </data>
@@ -689,46 +567,6 @@
            
              
               <breadCrumb title="Python" url="http://yoursite.com/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/05/27/sklearn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>sklearn学习笔记</title>
-        <pubTime>2017-05-27T00:37:39.000Z</pubTime>
-        
-        <tag>sklearn</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="http://yoursite.com/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/05/15/Keras%E4%B8%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Keras下可视化神经网络</title>
-        <pubTime>2017-05-15T12:48:34.000Z</pubTime>
-        
-        <tag>可视化</tag>
-         
-         
-           
-             
-              <breadCrumb title="Keras" url="http://yoursite.com/categories/Keras/"/>
           
         </display>
     </data>
@@ -762,16 +600,178 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/05/29/%E4%B8%80%E4%BA%9B%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/</loc>
+    <loc>http://yoursite.com/2017/05/24/SRILM%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>一些机器学习算法</title>
-        <pubTime>2017-05-29T02:05:30.000Z</pubTime>
+        <title>SRILM训练语言模型实战</title>
+        <pubTime>2017-05-24T11:41:29.000Z</pubTime>
         
-        <tag>机器学习</tag>
+        <tag>SRILM</tag>
          
-        <tag>算法</tag>
+        <tag>ngram</tag>
+         
+        <tag>LM</tag>
+         
+         
+           
+             
+              <breadCrumb title="语言模型" url="http://yoursite.com/categories/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/11/15/%E7%BB%BC%E8%BF%B0%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86NLP/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>综述自然语言处理NLP</title>
+        <pubTime>2017-11-15T02:42:33.000Z</pubTime>
+        
+        <tag>NLP</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://yoursite.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/10/R%E8%AF%AD%E8%A8%80%E4%B9%8Bggplot%E7%BB%98%E5%9B%BE/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>R语言之ggplot绘图</title>
+        <pubTime>2017-05-10T11:55:41.000Z</pubTime>
+        
+        <tag>R</tag>
+         
+         
+           
+             
+              <breadCrumb title="R语言" url="http://yoursite.com/categories/R%E8%AF%AD%E8%A8%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/10/Win10-Tensorflow-keras-GPU%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Win10+Tensorflow+keras+GPU环境配置</title>
+        <pubTime>2017-05-10T00:48:35.000Z</pubTime>
+        
+        <tag>环境配置</tag>
+         
+         
+           
+             
+              <breadCrumb title="TensorFlow" url="http://yoursite.com/categories/TensorFlow/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/04/30/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%BB%93/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo搭建博客小结</title>
+        <pubTime>2017-04-30T12:27:07.000Z</pubTime>
+        
+        <tag>技术</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/15/Keras%E4%B8%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Keras下可视化神经网络</title>
+        <pubTime>2017-05-15T12:48:34.000Z</pubTime>
+        
+        <tag>可视化</tag>
+         
+         
+           
+             
+              <breadCrumb title="Keras" url="http://yoursite.com/categories/Keras/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/07/20/719%E5%91%A8%E8%80%81%E5%B8%88%E5%BC%80%E4%BC%9A%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>719周老师开会记录</title>
+        <pubTime>2017-07-20T00:02:50.000Z</pubTime>
+        
+        <tag>开会记录</tag>
+         
+         
+           
+             
+              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/09/13/913%E5%91%A8%E4%BC%9A%E5%B0%8F%E7%BB%93/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>913周会小结</title>
+        <pubTime>2017-09-13T02:20:19.000Z</pubTime>
+        
+        <tag>开会记录</tag>
+         
+         
+           
+             
+              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/17/Deepin-15-4-%E6%90%AD%E5%BB%BALAMP%E7%8E%AF%E5%A2%83-Python%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Deepin 15.4 搭建LAMP环境&Python操作数据库</title>
+        <pubTime>2017-05-17T14:14:05.000Z</pubTime>
+        
+        <tag>环境配置</tag>
          
          
            
@@ -784,19 +784,19 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/05/06/%E5%9B%9E%E5%8E%BB%E5%90%A7/</loc>
+    <loc>http://yoursite.com/2017/10/10/BAT%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%9D%A2%E8%AF%951000%E9%A2%98%E7%B3%BB%E5%88%97/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>回去吧</title>
-        <pubTime>2017-05-06T02:58:51.000Z</pubTime>
+        <title>BAT机器学习面试1000题系列</title>
+        <pubTime>2017-10-10T12:03:00.000Z</pubTime>
         
-        <tag>心情</tag>
+        <tag>面试</tag>
          
          
            
              
-              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
+              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
