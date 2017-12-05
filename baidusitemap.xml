@@ -254,6 +254,26 @@
 
     
   <url>
+    <loc>http://ynuwm.github.io/2017/08/25/Welcome-back/</loc>
+    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>Welcome back</title>
+        <pubTime>2017-08-25T01:39:44.000Z</pubTime>
+        
+        <tag>LOL</tag>
+         
+         
+           
+             
+              <breadCrumb title="日记" url="http://ynuwm.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ynuwm.github.io/2017/05/30/%E8%AE%A1%E7%AE%97%E4%B8%A4%E4%B8%AA%E6%96%87%E6%9C%AC%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%BA%A6/</loc>
     <lastmod>2017-12-01T09:03:47.000Z</lastmod>
     <data>
@@ -273,26 +293,6 @@
            
              
               <breadCrumb title="深度学习" url="http://ynuwm.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ynuwm.github.io/2017/08/25/Welcome-back/</loc>
-    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>Welcome back</title>
-        <pubTime>2017-08-25T01:39:44.000Z</pubTime>
-        
-        <tag>LOL</tag>
-         
-         
-           
-             
-              <breadCrumb title="日记" url="http://ynuwm.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -578,26 +578,6 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/04/30/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%BB%93/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo搭建博客小结</title>
-        <pubTime>2017-04-30T12:27:07.000Z</pubTime>
-        
-        <tag>技术</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://ynuwm.github.io/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://ynuwm.github.io/2017/05/03/%E8%A6%81%E8%B5%B0%E4%BA%86/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
@@ -611,6 +591,26 @@
            
              
               <breadCrumb title="日记" url="http://ynuwm.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ynuwm.github.io/2017/04/30/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%BB%93/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo搭建博客小结</title>
+        <pubTime>2017-04-30T12:27:07.000Z</pubTime>
+        
+        <tag>技术</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://ynuwm.github.io/categories/Hexo/"/>
           
         </display>
     </data>
