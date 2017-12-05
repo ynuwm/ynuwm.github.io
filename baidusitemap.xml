@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://ynuwm.github.io/2017/12/05/%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2017-12-05T01:32:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>考研英语相关</title>
+        <pubTime>2017-12-05T01:26:01.000Z</pubTime>
+        
+        <tag>考研</tag>
+         
+         
+           
+             
+              <breadCrumb title="英语" url="http://ynuwm.github.io/categories/%E8%8B%B1%E8%AF%AD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ynuwm.github.io/2017/12/03/%E5%85%AD%E7%BA%A7%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2017-12-05T01:26:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>六级英语相关</title>
+        <pubTime>2017-12-03T01:07:43.000Z</pubTime>
+        
+        <tag>六级</tag>
+         
+         
+           
+             
+              <breadCrumb title="英语" url="http://ynuwm.github.io/categories/%E8%8B%B1%E8%AF%AD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ynuwm.github.io/2017/10/30/Faker%E9%87%87%E8%AE%BF%E7%9A%84%E6%97%B6%E5%80%99%E8%AF%B4/</loc>
     <lastmod>2017-12-04T12:43:05.000Z</lastmod>
     <data>
@@ -87,52 +127,6 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/05/27/tensorflow%E4%B9%8B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%80/</loc>
-    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>TensorFlow之神经网络(一)</title>
-        <pubTime>2017-05-27T02:04:10.000Z</pubTime>
-        
-        <tag>神经网络</tag>
-         
-        <tag>CNN</tag>
-         
-        <tag>RNN</tag>
-         
-        <tag>LSTM</tag>
-         
-         
-           
-             
-              <breadCrumb title="TensorFlow" url="http://ynuwm.github.io/categories/TensorFlow/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ynuwm.github.io/2017/08/25/Welcome-back/</loc>
-    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>Welcome back</title>
-        <pubTime>2017-08-25T01:39:44.000Z</pubTime>
-        
-        <tag>LOL</tag>
-         
-         
-           
-             
-              <breadCrumb title="日记" url="http://ynuwm.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://ynuwm.github.io/2017/06/24/%E4%BB%8A%E5%A4%A9%E5%BC%80%E6%AF%95%E4%B8%9A%E5%85%B8%E7%A4%BC/</loc>
     <lastmod>2017-12-01T09:03:47.000Z</lastmod>
     <data>
@@ -153,19 +147,21 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/11/24/%E6%8A%8A%E4%BF%A1%E9%80%81%E7%BB%99%E5%8A%A0%E8%A5%BF%E4%BA%9A/</loc>
+    <loc>http://ynuwm.github.io/2017/07/04/Nokia-Lumia-1020-%E6%8B%8D%E6%91%84%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2017-12-01T09:03:47.000Z</lastmod>
     <data>
         <display>
-        <title>把信送给加西亚</title>
-        <pubTime>2017-11-24T12:25:17.000Z</pubTime>
+        <title>Nokia Lumia 1020 拍摄技巧</title>
+        <pubTime>2017-07-04T03:22:19.000Z</pubTime>
         
-        <tag>职场</tag>
+        <tag>Lumia</tag>
+         
+        <tag>照片</tag>
          
          
            
              
-              <breadCrumb title="读书笔记" url="http://ynuwm.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+              <breadCrumb title="摄影" url="http://ynuwm.github.io/categories/%E6%91%84%E5%BD%B1/"/>
           
         </display>
     </data>
@@ -193,21 +189,64 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/07/04/Nokia-Lumia-1020-%E6%8B%8D%E6%91%84%E6%8A%80%E5%B7%A7/</loc>
+    <loc>http://ynuwm.github.io/2017/11/24/%E6%8A%8A%E4%BF%A1%E9%80%81%E7%BB%99%E5%8A%A0%E8%A5%BF%E4%BA%9A/</loc>
     <lastmod>2017-12-01T09:03:47.000Z</lastmod>
     <data>
         <display>
-        <title>Nokia Lumia 1020 拍摄技巧</title>
-        <pubTime>2017-07-04T03:22:19.000Z</pubTime>
+        <title>把信送给加西亚</title>
+        <pubTime>2017-11-24T12:25:17.000Z</pubTime>
         
-        <tag>Lumia</tag>
-         
-        <tag>照片</tag>
+        <tag>职场</tag>
          
          
            
              
-              <breadCrumb title="摄影" url="http://ynuwm.github.io/categories/%E6%91%84%E5%BD%B1/"/>
+              <breadCrumb title="读书笔记" url="http://ynuwm.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://ynuwm.github.io/2017/05/15/Python%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%85%B8%E7%9A%84%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python实现基于词典的文本情感分析</title>
+        <pubTime>2017-05-15T09:26:28.000Z</pubTime>
+        
+        <tag>文本情感分析</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://ynuwm.github.io/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ynuwm.github.io/2017/05/14/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8AutoEncoder/</loc>
+    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>自编码器AutoEncoder</title>
+        <pubTime>2017-05-14T01:30:37.000Z</pubTime>
+        
+        <tag>神经网络</tag>
+         
+        <tag>keras</tag>
+         
+        <tag>无监督学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="Keras" url="http://ynuwm.github.io/categories/Keras/"/>
           
         </display>
     </data>
@@ -241,43 +280,47 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/05/14/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8AutoEncoder/</loc>
+    <loc>http://ynuwm.github.io/2017/08/25/Welcome-back/</loc>
     <lastmod>2017-12-01T09:03:47.000Z</lastmod>
     <data>
         <display>
-        <title>自编码器AutoEncoder</title>
-        <pubTime>2017-05-14T01:30:37.000Z</pubTime>
+        <title>Welcome back</title>
+        <pubTime>2017-08-25T01:39:44.000Z</pubTime>
+        
+        <tag>LOL</tag>
+         
+         
+           
+             
+              <breadCrumb title="日记" url="http://ynuwm.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://ynuwm.github.io/2017/05/27/tensorflow%E4%B9%8B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%80/</loc>
+    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>TensorFlow之神经网络(一)</title>
+        <pubTime>2017-05-27T02:04:10.000Z</pubTime>
         
         <tag>神经网络</tag>
          
-        <tag>keras</tag>
+        <tag>CNN</tag>
          
-        <tag>无监督学习</tag>
+        <tag>RNN</tag>
          
-         
-           
-             
-              <breadCrumb title="Keras" url="http://ynuwm.github.io/categories/Keras/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ynuwm.github.io/2017/05/15/Python%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%85%B8%E7%9A%84%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>Python实现基于词典的文本情感分析</title>
-        <pubTime>2017-05-15T09:26:28.000Z</pubTime>
-        
-        <tag>文本情感分析</tag>
+        <tag>LSTM</tag>
          
          
            
              
-              <breadCrumb title="Python" url="http://ynuwm.github.io/categories/Python/"/>
+              <breadCrumb title="TensorFlow" url="http://ynuwm.github.io/categories/TensorFlow/"/>
           
         </display>
     </data>
@@ -288,38 +331,15 @@
     
     
     
-    
-    
-    
   <url>
-    <loc>http://ynuwm.github.io/2017/04/30/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%BB%93/</loc>
+    <loc>http://ynuwm.github.io/2017/11/24/%E5%8D%97%E8%88%AA%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>Hexo搭建博客小结</title>
-        <pubTime>2017-04-30T12:27:07.000Z</pubTime>
+        <title>南航求职经历</title>
+        <pubTime>2017-11-24T08:33:01.000Z</pubTime>
         
-        <tag>技术</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://ynuwm.github.io/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ynuwm.github.io/2017/09/06/%E4%BB%8A%E5%AE%B5%E9%85%92%E9%86%92%E4%BD%95%E5%A4%84/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>今宵酒醒何处</title>
-        <pubTime>2017-09-06T07:42:20.000Z</pubTime>
-        
-        <tag>周传雄</tag>
+        <tag>面试</tag>
          
          
            
@@ -352,26 +372,6 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/05/17/Deepin-15-4-%E6%90%AD%E5%BB%BALAMP%E7%8E%AF%E5%A2%83-Python%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Deepin 15.4 搭建LAMP环境&Python操作数据库</title>
-        <pubTime>2017-05-17T14:14:05.000Z</pubTime>
-        
-        <tag>环境配置</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="http://ynuwm.github.io/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://ynuwm.github.io/2017/07/14/%E5%A2%99%E5%A4%96%E7%9A%84%E4%B8%96%E7%95%8C/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
@@ -387,6 +387,90 @@
            
              
               <breadCrumb title="翻墙" url="http://ynuwm.github.io/categories/%E7%BF%BB%E5%A2%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ynuwm.github.io/2017/07/20/719%E5%91%A8%E8%80%81%E5%B8%88%E5%BC%80%E4%BC%9A%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>719周老师开会记录</title>
+        <pubTime>2017-07-20T00:02:50.000Z</pubTime>
+        
+        <tag>开会记录</tag>
+         
+         
+           
+             
+              <breadCrumb title="日记" url="http://ynuwm.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ynuwm.github.io/2017/05/10/R%E8%AF%AD%E8%A8%80%E4%B9%8Bggplot%E7%BB%98%E5%9B%BE/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>R语言之ggplot绘图</title>
+        <pubTime>2017-05-10T11:55:41.000Z</pubTime>
+        
+        <tag>R</tag>
+         
+         
+           
+             
+              <breadCrumb title="R语言" url="http://ynuwm.github.io/categories/R%E8%AF%AD%E8%A8%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ynuwm.github.io/2017/05/24/SRILM%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>SRILM训练语言模型实战</title>
+        <pubTime>2017-05-24T11:41:29.000Z</pubTime>
+        
+        <tag>SRILM</tag>
+         
+        <tag>ngram</tag>
+         
+        <tag>LM</tag>
+         
+         
+           
+             
+              <breadCrumb title="语言模型" url="http://ynuwm.github.io/categories/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ynuwm.github.io/2017/05/16/%E6%91%94%E8%B7%A4%E5%90%A7%E7%88%B8%E7%88%B8/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>摔跤吧爸爸</title>
+        <pubTime>2017-05-16T02:46:11.000Z</pubTime>
+        
+        <tag>Movie</tag>
+         
+         
+           
+             
+              <breadCrumb title="影评" url="http://ynuwm.github.io/categories/%E5%BD%B1%E8%AF%84/"/>
           
         </display>
     </data>
@@ -414,19 +498,19 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/05/10/R%E8%AF%AD%E8%A8%80%E4%B9%8Bggplot%E7%BB%98%E5%9B%BE/</loc>
+    <loc>http://ynuwm.github.io/2017/09/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%92%8C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%8D%E5%90%B4%E6%81%A9%E8%BE%BE2017/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>R语言之ggplot绘图</title>
-        <pubTime>2017-05-10T11:55:41.000Z</pubTime>
+        <title>深度学习和神经网络－吴恩达2017</title>
+        <pubTime>2017-09-09T13:47:45.000Z</pubTime>
         
-        <tag>R</tag>
+        <tag>神经网络，机器学习</tag>
          
          
            
              
-              <breadCrumb title="R语言" url="http://ynuwm.github.io/categories/R%E8%AF%AD%E8%A8%80/"/>
+              <breadCrumb title="深度学习" url="http://ynuwm.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -474,26 +558,6 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/09/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%92%8C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%8D%E5%90%B4%E6%81%A9%E8%BE%BE2017/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>深度学习和神经网络－吴恩达2017</title>
-        <pubTime>2017-09-09T13:47:45.000Z</pubTime>
-        
-        <tag>神经网络，机器学习</tag>
-         
-         
-           
-             
-              <breadCrumb title="深度学习" url="http://ynuwm.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://ynuwm.github.io/2017/11/18/SemEval2017%E5%89%8D%E5%87%A0%E5%90%8D%E6%80%9D%E8%B7%AF%E4%B8%8E%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
@@ -514,39 +578,19 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/05/16/%E6%91%94%E8%B7%A4%E5%90%A7%E7%88%B8%E7%88%B8/</loc>
+    <loc>http://ynuwm.github.io/2017/04/30/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%BB%93/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>摔跤吧爸爸</title>
-        <pubTime>2017-05-16T02:46:11.000Z</pubTime>
+        <title>Hexo搭建博客小结</title>
+        <pubTime>2017-04-30T12:27:07.000Z</pubTime>
         
-        <tag>Movie</tag>
+        <tag>技术</tag>
          
          
            
              
-              <breadCrumb title="影评" url="http://ynuwm.github.io/categories/%E5%BD%B1%E8%AF%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ynuwm.github.io/2017/05/15/Keras%E4%B8%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Keras下可视化神经网络</title>
-        <pubTime>2017-05-15T12:48:34.000Z</pubTime>
-        
-        <tag>可视化</tag>
-         
-         
-           
-             
-              <breadCrumb title="Keras" url="http://ynuwm.github.io/categories/Keras/"/>
+              <breadCrumb title="Hexo" url="http://ynuwm.github.io/categories/Hexo/"/>
           
         </display>
     </data>
@@ -574,6 +618,26 @@
 
     
   <url>
+    <loc>http://ynuwm.github.io/2017/05/10/Win10-Tensorflow-keras-GPU%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Win10+Tensorflow+keras+GPU环境配置</title>
+        <pubTime>2017-05-10T00:48:35.000Z</pubTime>
+        
+        <tag>环境配置</tag>
+         
+         
+           
+             
+              <breadCrumb title="TensorFlow" url="http://ynuwm.github.io/categories/TensorFlow/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ynuwm.github.io/2017/06/04/gensim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
@@ -582,26 +646,6 @@
         <pubTime>2017-06-04T01:18:39.000Z</pubTime>
         
         <tag>gensim</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="http://ynuwm.github.io/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ynuwm.github.io/2017/05/27/sklearn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>sklearn学习笔记</title>
-        <pubTime>2017-05-27T00:37:39.000Z</pubTime>
-        
-        <tag>sklearn</tag>
          
          
            
@@ -634,19 +678,19 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/07/20/719%E5%91%A8%E8%80%81%E5%B8%88%E5%BC%80%E4%BC%9A%E8%AE%B0%E5%BD%95/</loc>
+    <loc>http://ynuwm.github.io/2017/05/27/sklearn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>719周老师开会记录</title>
-        <pubTime>2017-07-20T00:02:50.000Z</pubTime>
+        <title>sklearn学习笔记</title>
+        <pubTime>2017-05-27T00:37:39.000Z</pubTime>
         
-        <tag>开会记录</tag>
+        <tag>sklearn</tag>
          
          
            
              
-              <breadCrumb title="日记" url="http://ynuwm.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+              <breadCrumb title="Python" url="http://ynuwm.github.io/categories/Python/"/>
           
         </display>
     </data>
@@ -654,63 +698,19 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/10/10/BAT%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%9D%A2%E8%AF%951000%E9%A2%98%E7%B3%BB%E5%88%97/</loc>
+    <loc>http://ynuwm.github.io/2017/05/15/Keras%E4%B8%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>BAT机器学习面试1000题系列</title>
-        <pubTime>2017-10-10T12:03:00.000Z</pubTime>
+        <title>Keras下可视化神经网络</title>
+        <pubTime>2017-05-15T12:48:34.000Z</pubTime>
         
-        <tag>面试</tag>
+        <tag>可视化</tag>
          
          
            
              
-              <breadCrumb title="机器学习" url="http://ynuwm.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ynuwm.github.io/2017/05/10/Win10-Tensorflow-keras-GPU%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Win10+Tensorflow+keras+GPU环境配置</title>
-        <pubTime>2017-05-10T00:48:35.000Z</pubTime>
-        
-        <tag>环境配置</tag>
-         
-         
-           
-             
-              <breadCrumb title="TensorFlow" url="http://ynuwm.github.io/categories/TensorFlow/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ynuwm.github.io/2017/05/24/SRILM%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>SRILM训练语言模型实战</title>
-        <pubTime>2017-05-24T11:41:29.000Z</pubTime>
-        
-        <tag>SRILM</tag>
-         
-        <tag>ngram</tag>
-         
-        <tag>LM</tag>
-         
-         
-           
-             
-              <breadCrumb title="语言模型" url="http://ynuwm.github.io/categories/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"/>
+              <breadCrumb title="Keras" url="http://ynuwm.github.io/categories/Keras/"/>
           
         </display>
     </data>
@@ -766,14 +766,34 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/05/06/%E5%9B%9E%E5%8E%BB%E5%90%A7/</loc>
+    <loc>http://ynuwm.github.io/2017/10/10/BAT%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%9D%A2%E8%AF%951000%E9%A2%98%E7%B3%BB%E5%88%97/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>回去吧</title>
-        <pubTime>2017-05-06T02:58:51.000Z</pubTime>
+        <title>BAT机器学习面试1000题系列</title>
+        <pubTime>2017-10-10T12:03:00.000Z</pubTime>
         
-        <tag>心情</tag>
+        <tag>面试</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="http://ynuwm.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ynuwm.github.io/2017/09/06/%E4%BB%8A%E5%AE%B5%E9%85%92%E9%86%92%E4%BD%95%E5%A4%84/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>今宵酒醒何处</title>
+        <pubTime>2017-09-06T07:42:20.000Z</pubTime>
+        
+        <tag>周传雄</tag>
          
          
            
@@ -786,14 +806,34 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/11/24/%E5%8D%97%E8%88%AA%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/</loc>
+    <loc>http://ynuwm.github.io/2017/05/17/Deepin-15-4-%E6%90%AD%E5%BB%BALAMP%E7%8E%AF%E5%A2%83-Python%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
         <display>
-        <title>南航求职经历</title>
-        <pubTime>2017-11-24T08:33:01.000Z</pubTime>
+        <title>Deepin 15.4 搭建LAMP环境&Python操作数据库</title>
+        <pubTime>2017-05-17T14:14:05.000Z</pubTime>
         
-        <tag>面试</tag>
+        <tag>环境配置</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://ynuwm.github.io/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ynuwm.github.io/2017/05/06/%E5%9B%9E%E5%8E%BB%E5%90%A7/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>回去吧</title>
+        <pubTime>2017-05-06T02:58:51.000Z</pubTime>
+        
+        <tag>心情</tag>
          
          
            
