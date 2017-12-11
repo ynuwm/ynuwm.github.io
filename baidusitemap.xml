@@ -268,6 +268,30 @@
     
     
   <url>
+    <loc>http://ynuwm.github.io/2017/05/14/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8AutoEncoder/</loc>
+    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>自编码器AutoEncoder</title>
+        <pubTime>2017-05-14T01:30:37.000Z</pubTime>
+        
+        <tag>神经网络</tag>
+         
+        <tag>keras</tag>
+         
+        <tag>无监督学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="Keras" url="http://ynuwm.github.io/categories/Keras/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ynuwm.github.io/2017/05/27/tensorflow%E4%B9%8B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%80/</loc>
     <lastmod>2017-12-01T09:03:47.000Z</lastmod>
     <data>
@@ -287,30 +311,6 @@
            
              
               <breadCrumb title="TensorFlow" url="http://ynuwm.github.io/categories/TensorFlow/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ynuwm.github.io/2017/05/14/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8AutoEncoder/</loc>
-    <lastmod>2017-12-01T09:03:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>自编码器AutoEncoder</title>
-        <pubTime>2017-05-14T01:30:37.000Z</pubTime>
-        
-        <tag>神经网络</tag>
-         
-        <tag>keras</tag>
-         
-        <tag>无监督学习</tag>
-         
-         
-           
-             
-              <breadCrumb title="Keras" url="http://ynuwm.github.io/categories/Keras/"/>
           
         </display>
     </data>
@@ -638,26 +638,6 @@
 
     
   <url>
-    <loc>http://ynuwm.github.io/2017/05/15/Keras%E4%B8%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Keras下可视化神经网络</title>
-        <pubTime>2017-05-15T12:48:34.000Z</pubTime>
-        
-        <tag>可视化</tag>
-         
-         
-           
-             
-              <breadCrumb title="Keras" url="http://ynuwm.github.io/categories/Keras/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://ynuwm.github.io/2017/05/03/%E8%A6%81%E8%B5%B0%E4%BA%86/</loc>
     <lastmod>2017-12-01T09:03:46.000Z</lastmod>
     <data>
@@ -671,6 +651,26 @@
            
              
               <breadCrumb title="日记" url="http://ynuwm.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ynuwm.github.io/2017/05/15/Keras%E4%B8%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2017-12-01T09:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Keras下可视化神经网络</title>
+        <pubTime>2017-05-15T12:48:34.000Z</pubTime>
+        
+        <tag>可视化</tag>
+         
+         
+           
+             
+              <breadCrumb title="Keras" url="http://ynuwm.github.io/categories/Keras/"/>
           
         </display>
     </data>
