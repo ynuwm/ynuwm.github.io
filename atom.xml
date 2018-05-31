@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ynuwm.github.io/"/>
-  <updated>2017-12-09T01:37:35.000Z</updated>
+  <updated>2018-05-31T13:39:26.000Z</updated>
   <id>http://ynuwm.github.io/</id>
   
   <author>
@@ -14,6 +14,101 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI三大领域</title>
+    <link href="http://ynuwm.github.io/2018/05/27/AI%E4%B8%89%E5%A4%A7%E9%A2%86%E5%9F%9F/"/>
+    <id>http://ynuwm.github.io/2018/05/27/AI三大领域/</id>
+    <published>2018-05-27T02:21:30.000Z</published>
+    <updated>2018-05-31T13:39:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-计算机视觉"><a href="#1-计算机视觉" class="headerlink" title="1,计算机视觉"></a>1,计算机视觉</h3><p>由简到难分为三个层次：处理、识别检测和分析理解。<br>图像处理层面主要是对图像的像素的处理；<br>图像识别检测包含语义信息的简单探索；<br>图像理解还有很多值得研究的地方。</p>
+<p>图像处理层面主要包含去噪声、去模糊、超分辨率处理、滤镜处理等；<br>图像识别检测包含图像的分类、定位、检测、分割；<br>图像理解主要有基于文本的图像搜索、图像描述生成、图像问答（给定图像和问题，输出答案）等。</p>
+<h3 id="2-语音处理"><a href="#2-语音处理" class="headerlink" title="2,语音处理"></a>2,语音处理</h3><p>完整的语音系统包括前端的信号处理、中间的语音语义识别和对话管理（更多涉及自然语言处理）、以及后期的语音合成。</p>
+<p>语音的前端处理中包含几个模块。<br>说话人声检测：有效地检测说话人声开始和结束时刻, 区分说话人声与背景声；<br>回声消除：当音箱在播放音乐时，为了不暂停音乐而进行有效的语音识别，需要消除来自扬声器的音乐干扰；<br>唤醒词识别：人类与机器交流的触发方式，就像日常生活中需要与其他人说话时，你会先喊一下那个人的名字；<br>麦克风阵列处理：对声源进行定位，增强说话人方向的信号、抑制其他方向的噪音信号；<br>语音增强：对说话人语音区域进一步增强,、环境噪声区域进一步抑制,有效降低远场语音的衰减。</p>
+<p>语音识别的过程需要经历特征提取、模型自适应、声学模型、语言模型、动态解码等多个过程。除了前面提到的远场识别问题之外，还有许多前沿研究集中在解决“鸡尾酒会问题”。</p>
+<p>考虑到语义识别和对话管理环节更多是属于自然语言处理的范畴，剩下的就是语音合成环节。<br>语音合成的几个步骤包括：文本分析、语言学分析、音长估算、发音参数估计等。</p>
+<h3 id="3-自然语言处理"><a href="#3-自然语言处理" class="headerlink" title="3,自然语言处理"></a>3,自然语言处理</h3><p>NLP包括知识的获取与表达、自然语言理解、自然语言生成等等，也相应出现了知识图谱、对话管理、机器翻译等研究方向，与前述的处理环节形成多对多的映射关系。</p>
+<p>知识图谱是基于语义层面对知识进行组织后得到的结构化结果，可以用来回答简单事实类的问题。 包括语言知识图谱（词义上下位、同义词等）、常识知识图谱（“鸟会飞但兔子不会飞”）、实体关系图谱（“刘德华的妻子是朱丽倩”）。知识图谱的构建过程其实就是获取知识、表示知识、应用知识的过程。  </p>
+<p>语义理解是自然语言处理中的最大难题，以中文为例，这里面需要解决4个困难:<br>首先是歧义消除，包括词语层面、短语层面、句子层面的的歧义；<br>其次是上下文关联性，例如“小明欺负小李，所以我批评了他。”，需要依靠上下文才知道我批评的是调皮的小明；<br>第三是意图识别，“晴天”可以指天气也可以指周杰伦的歌<br>最后一块是情感识别，显性与隐性的情感识别（“我不高兴”和“我考试没考好”都是用户在表示心情低落）。</p>
+<p>目前对话管理主要包含三种情形，按照涉及知识的通用到专业，依次是闲聊、问答、任务驱动型对话。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-计算机视觉&quot;&gt;&lt;a href=&quot;#1-计算机视觉&quot; class=&quot;headerlink&quot; title=&quot;1,计算机视觉&quot;&gt;&lt;/a&gt;1,计算机视觉&lt;/h3&gt;&lt;p&gt;由简到难分为三个层次：处理、识别检测和分析理解。&lt;br&gt;图像处理层面主要是对图像的像素的处理；&lt;br
+    
+    </summary>
+    
+      <category term="归纳总结" scheme="http://ynuwm.github.io/categories/%E5%BD%92%E7%BA%B3%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="AI" scheme="http://ynuwm.github.io/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关系抽取研究现状</title>
+    <link href="http://ynuwm.github.io/2018/05/26/%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96%E7%A0%94%E7%A9%B6%E7%8E%B0%E7%8A%B6/"/>
+    <id>http://ynuwm.github.io/2018/05/26/关系抽取研究现状/</id>
+    <published>2018-05-26T13:28:41.000Z</published>
+    <updated>2018-05-31T13:34:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>关系抽取就是从文本中识别实体并抽取实体之间的语义关系。</p>
+<h3 id="关系抽取的方法有以下三类："><a href="#关系抽取的方法有以下三类：" class="headerlink" title="关系抽取的方法有以下三类："></a>关系抽取的方法有以下三类：</h3><p>1,有监督的学习方法：根据已有数据训练分类器，用训练好的分类器预测关系。有监督的学习方法缺点是需要大量人工标注的语料。<br>2,半监督的学习方法：主要是用Bootstrapping进行关系抽取。对要抽取的关系首先手工设定若干种子实例，然后迭代地从数据中抽取关系对应的关系模板和更多的实例。<br>3,无监督的学习方法：假设拥有相同语义关系的实体对拥有相似的上下文信息。故可以利用每个实体对对应上下文信息来代表该实体对的语义关系，并对所有实体对的语义关系进行聚类。</p>
+<h3 id="有监督学习与远程监督"><a href="#有监督学习与远程监督" class="headerlink" title="有监督学习与远程监督"></a>有监督学习与远程监督</h3><p>有监督学习的不足是需要大量人工标注的训练数据，但是人工标注训练数据需要花费大量时间和精力。基于此，Mintz在2009年提出了远程监督（Distant Supervision）的思想。这篇论文将纽约时报新闻文本和大规模知识图谱Freebase(包含7300多个关系和超过9亿的实体)进行实体对齐。远程监督假设，一个同时<br>包含两个实体的句子蕴含了该实体对在 Freebase 中的关系，并将该句子作为该实<br>体对所对应关系的训练正例。论文在远程监督标注的数据上提取文本特征并训练<br>关系分类模型，有效解决了关系抽取的标注数据规模问题。 </p>
+<p>远程监督的思想假设的是一个实体只对应一种关系。但是，很多实体之间具有多种关系。因此Hoffmann在2011年提出了采用多实例多标签方法来对关系抽取进行建模，刻画一个实体对可能存在多种关系的情况。</p>
+<h3 id="基于深度学习的关系抽取"><a href="#基于深度学习的关系抽取" class="headerlink" title="基于深度学习的关系抽取"></a>基于深度学习的关系抽取</h3><p>Socher在2012年开始使用递归神经网络来解决关系抽取问题，这篇论文首先对句子进行句法解析，然后为句法树上的每个节点学习向量表示。通过递归神经网络，可以从句法树最低端的词向量开始，按照句子的句法结构迭代合并，最终得到该句子的向量表示，并用于关系分类。该方法能够有效考虑句子的句法结构信息，但是无法考虑两个实体在句子中的位置和语义信息。</p>
+<p>Zeng在2014年提出用卷积神经网络进行关系抽取。论文此阿勇词汇向量和词的位置向量作为卷积神经网络的输入，通过卷积层、池化层和非线性层得到句子表示。通过考虑实体的位置向量和其他相关的词汇特征，句子中的实体信息能够被较好地考虑到关系抽取中。</p>
+<p>Miwa在2016年提出一种端到端神经网络的关系抽取模型。该模型采用BiLSTM和树形LSTM同时对句子和实体进行建模。</p>
+<p>与之前基于特征的关系抽取系统类似，神经网络关系抽取模型也面临着人工标注数据较少的问题。对此，Zeng在2015年尝试将基于卷积神经网络的关系抽取模型扩展到远程监督数据上。Zeng假设每个实体对的所有句子中至少存在一个句子反映该实体对的关系，提出了一种新的学习框架：以实体对为单位，对于每个实体对只考虑最能反映其关系的那个句子。该方法在一定程度上解决了神经网络关系抽取模型在远程监督数据上的应用，在NYT10 数据集上取得了远<br>远高于基于特征的关系抽取模型的预测效果。但是，该方法仍然存在一定的缺陷：该模型对于每个实体对只能选用一个句子进行学习和预测， 损失了来自其他大量的有效句子的信息。</p>
+<p>有没有可能把实体对对应的有噪音的句子过滤掉，然后利用所有有效句子进行学习和预测呢？ Lin在2016年提出了一种基于句子级别注意力机制的神经网络模型来解决这个问题，该方法能够根据特定关系为实体对的每个句子分配权重，通过不断学习能够使有效句子获得较高的权重， 而有噪音的句子获得较小的权重。 </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1,基于句法树的树形LSTM神经网络模型在关系抽取上取得了不错的效果，说明句法信息对关系抽取有一定的帮助，但是目前句法分析仍然存在很多的错误。如果对一个句子考虑多种句法分析树，把这些句法分析树的结果进行整合，准确率也会得到很大的提升。<br>2,目前神经网络的方法主要基于预设的关系集合，而如何面对开放领域进行关系提取，也有很大的限制。所以如何将神经网络引入开放领域的关系提取，自动发现新的关系及事实是一个值得探索的问题。<br>3,目前的关系提取主要基于单语言文本。但是文本这是信息表示的方式之一，如何利用多语言文本、图像和音频信息进行关系提取也是值得思考的问题。</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>Mintz, Mike, Steven Bills, Rion Snow, and Dan Jurafsky. “Distant supervision<br>for relation extraction without labeled data.” In Proceedings of ACL-IJCNLP, 2009.</p>
+<p>Hoffmann, Raphael, Congle Zhang, Xiao Ling, Luke Zettlemoyer, and Daniel S.<br>Weld. “Knowledge-based weak supervision for information extraction of<br>overlapping relations.” In Proceedings of ACL-HLT, 2011.</p>
+<p>Socher, Richard, et al. “Semantic compositionality through recursive<br>matrix-vector spaces.” Proceedings of EMNLP-CoNLL, 2012</p>
+<p>Daojian Zeng, Kang Liu, Siwei Lai, Guangyou Zhou, and Jun Zhao. Relation classification via convolutional deep neural network. In Proceedings of COLING.</p>
+<p>Makoto Miwa, Mohit Bansa. “End-to-End Relation Extraction using LSTMs on<br>Sequences and Tree Structures” In Proceedings of ACL, 2016.</p>
+<p>Daojian Zeng,Kang Liu,Yubo Chen,and Jun Zhao. Distant supervision for relation extraction via piecewise convolutional neural networks. In Proceedings of EMNLP.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关系抽取就是从文本中识别实体并抽取实体之间的语义关系。&lt;/p&gt;
+&lt;h3 id=&quot;关系抽取的方法有以下三类：&quot;&gt;&lt;a href=&quot;#关系抽取的方法有以下三类：&quot; class=&quot;headerlink&quot; title=&quot;关系抽取的方法有以下三类：&quot;&gt;&lt;/a&gt;关系抽取的方法有以下三类
+    
+    </summary>
+    
+      <category term="归纳总结" scheme="http://ynuwm.github.io/categories/%E5%BD%92%E7%BA%B3%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="机器学习" scheme="http://ynuwm.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1219组会小结</title>
+    <link href="http://ynuwm.github.io/2017/12/20/1219%E7%BB%84%E4%BC%9A%E5%B0%8F%E7%BB%93-1/"/>
+    <id>http://ynuwm.github.io/2017/12/20/1219组会小结-1/</id>
+    <published>2017-12-20T12:40:25.000Z</published>
+    <updated>2017-12-21T13:15:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>一, CV交叉验证的方差用处不大;<br>二, 句子padding 0的时候mask参数的选择,LSTM和CNN不同;<br>三, 训练不要划分验证集，全部数据都拿来训练，dev-set来验证；<br>四, 分词器(tokenizer)选择:<br>(1)nltk三个<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> nltk.tokenize <span class="keyword">import</span> TweetTokenizer</div><div class="line"><span class="keyword">from</span> nltk.tokenize <span class="keyword">import</span> StanfordTokenizer</div><div class="line"><span class="keyword">from</span> nltk.tokenize <span class="keyword">import</span> word_tokenize</div></pre></td></tr></table></figure></p>
+<p>(2)HappyTokenizing,这里<a href="https://github.com/dlatk/happierfuntokenizing" target="_blank" rel="external">https://github.com/dlatk/happierfuntokenizing</a><br>(3)<em>TweetNLP</em> (Owoputi et al., 2013) <a href="http://www.cs.cmu.edu/~ark/TweetNLP/" target="_blank" rel="external">http://www.cs.cmu.edu/~ark/TweetNLP/</a><br>(4)自己手动写，根据数据集特征。<br>五, 分词考虑: url, http, @ 等;<br>六, 词向量考虑:推特-Glove,fasttext基本用来分类,w2v普遍适用,emoji-embedding;<br>六, MultiTask-learning思想:<br>同时对多个任务学习不同的回归函数。<br>七,adam优化器比sgd收敛快？</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一, CV交叉验证的方差用处不大;&lt;br&gt;二, 句子padding 0的时候mask参数的选择,LSTM和CNN不同;&lt;br&gt;三, 训练不要划分验证集，全部数据都拿来训练，dev-set来验证；&lt;br&gt;四, 分词器(tokenizer)选择:&lt;br&gt;(1)nltk三个&lt;br
+    
+    </summary>
+    
+      <category term="日记" scheme="http://ynuwm.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="开会记录" scheme="http://ynuwm.github.io/tags/%E5%BC%80%E4%BC%9A%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>梯度下降优化算法</title>
@@ -856,91 +951,6 @@
     
     
       <category term="周传雄" scheme="http://ynuwm.github.io/tags/%E5%91%A8%E4%BC%A0%E9%9B%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Welcome back</title>
-    <link href="http://ynuwm.github.io/2017/08/25/Welcome-back/"/>
-    <id>http://ynuwm.github.io/2017/08/25/Welcome-back/</id>
-    <published>2017-08-25T01:39:44.000Z</published>
-    <updated>2017-12-01T09:03:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome back VG</p>
-<p><img src="/2017/08/25/Welcome-back/000.jpg" alt="img"> </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome back VG&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2017/08/25/Welcome-back/000.jpg&quot; alt=&quot;img&quot;&gt; &lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="日记" scheme="http://ynuwm.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="LOL" scheme="http://ynuwm.github.io/tags/LOL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用理工科思维理解世界</title>
-    <link href="http://ynuwm.github.io/2017/07/31/%E7%94%A8%E7%90%86%E5%B7%A5%E7%A7%91%E6%80%9D%E7%BB%B4%E7%90%86%E8%A7%A3%E4%B8%96%E7%95%8C/"/>
-    <id>http://ynuwm.github.io/2017/07/31/用理工科思维理解世界/</id>
-    <published>2017-07-31T04:16:51.000Z</published>
-    <updated>2017-12-01T09:03:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Part-One-反常识思维"><a href="#Part-One-反常识思维" class="headerlink" title="Part One　反常识思维"></a>Part One　反常识思维</h1><h2 id="反常识思维"><a href="#反常识思维" class="headerlink" title="反常识思维"></a>反常识思维</h2><p>有时候他们把自己的价值判断称为“常识”，因为这写判断本来就是从人的原始思维而来的，然而现代社会产生了另一种思维，却是“反常识”的。</p>
-<p>Tradeoff：我们不得不在生活中做出各种取舍，而很多的烦恼恰恰来自不愿意或者不知道取舍。</p>
-<p>人脑有两套思维系统,”系统１”,”系统２”，前者起自动作用，能对事物给出一个很难被改变的第一印象；而后者费力而缓慢，需要我们集中注意力进行复杂的计算。系统２根本不是计算机的对手，而系统１却比计算机强大的多（谷歌识别猫脸实验）。文人思维是系统１的集大成者，而理工科思维则是系统２的产物。</p>
-<p>Tradeoff 要求量化输入和预计输出，这也是理工科思维的最根本的方法。现在到了用了理工科思维取代文人思维的时候了。传统的文人腔已经越来越少出现在主流媒体上，一篇正经讨论现实问题的文章总要做点计算才说的过去。</p>
-<h2 id="“舌战群儒”的技术分析"><a href="#“舌战群儒”的技术分析" class="headerlink" title="“舌战群儒”的技术分析"></a>“舌战群儒”的技术分析</h2><p>诸葛亮前往东吴说服孙权抗曹。这一仗是打还是不打，正确的讨论方法是摆事实讲道理，推演各种选择的最可能结局。利弊分析，再做决策。但是舌战群儒这场辩论的主题却不是打不打的问题，而是一种从气势上压过对方一头。　　舌战群儒的技术不是证明对方的结论不对，而是证明对方这个“人”，或者对方代表的势力，不行。表面上是说具体问题，而实际上都是说人。<br>舌战群儒技术一共三招：<br>（１）列举事实证据，暗示对方能力不行。<br>（２）如果比不过事实，比境界<br>（３）你别说我如何如何不堪，著名英雄XXX也曾经如此过</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Part-One-反常识思维&quot;&gt;&lt;a href=&quot;#Part-One-反常识思维&quot; class=&quot;headerlink&quot; title=&quot;Part One　反常识思维&quot;&gt;&lt;/a&gt;Part One　反常识思维&lt;/h1&gt;&lt;h2 id=&quot;反常识思维&quot;&gt;&lt;a href=&quot;#
-    
-    </summary>
-    
-      <category term="读书笔记" scheme="http://ynuwm.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="思维" scheme="http://ynuwm.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>719周老师开会记录</title>
-    <link href="http://ynuwm.github.io/2017/07/20/719%E5%91%A8%E8%80%81%E5%B8%88%E5%BC%80%E4%BC%9A%E8%AE%B0%E5%BD%95/"/>
-    <id>http://ynuwm.github.io/2017/07/20/719周老师开会记录/</id>
-    <published>2017-07-20T00:02:50.000Z</published>
-    <updated>2017-12-01T09:03:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>1，做科研其实是很简单的事，掌握一定的手段，发现未知问题，用现有手段去解决问题。在此过程中掌握新手段，再发现新问题，解决新问题。</p>
-<p>2，人生的高度取决于你的能力。人可能有很多想法，但是能实现的有多少。做论文是一样的，想法很多，手段单一是弄不成的。</p>
-<p>3，为什么总想着比下有余，却不想想比上不足，。为什么不向更优秀的人看齐。</p>
-<p>4，有什么事情一定要立刻去做。用最少的时间做最多的事情。</p>
-<p>5，别人能做到的你也要做到。有时候不是事情太难，而是我们根本没花多少时间去钻研。</p>
-<p>6，都要努力咯。没论文以后申请项目就难。硬件就不要想了。</p>
-<p>7，计量党建学，重点实验室。</p>
-<p><font color="#E10602/font"><strong><br>——— 来自于 Deepin 15.4 桌面版  &amp; Moeditor V_0.1.1</strong></font></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1，做科研其实是很简单的事，掌握一定的手段，发现未知问题，用现有手段去解决问题。在此过程中掌握新手段，再发现新问题，解决新问题。&lt;/p&gt;
-&lt;p&gt;2，人生的高度取决于你的能力。人可能有很多想法，但是能实现的有多少。做论文是一样的，想法很多，手段单一是弄不成的。&lt;/p&gt;
-&lt;p&gt;
-    
-    </summary>
-    
-      <category term="日记" scheme="http://ynuwm.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="开会记录" scheme="http://ynuwm.github.io/tags/%E5%BC%80%E4%BC%9A%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   

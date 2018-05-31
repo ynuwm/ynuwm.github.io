@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[AI三大领域]]></title>
+    <url>%2F2018%2F05%2F27%2FAI%E4%B8%89%E5%A4%A7%E9%A2%86%E5%9F%9F%2F</url>
+    <content type="text"><![CDATA[1,计算机视觉由简到难分为三个层次：处理、识别检测和分析理解。图像处理层面主要是对图像的像素的处理；图像识别检测包含语义信息的简单探索；图像理解还有很多值得研究的地方。 图像处理层面主要包含去噪声、去模糊、超分辨率处理、滤镜处理等；图像识别检测包含图像的分类、定位、检测、分割；图像理解主要有基于文本的图像搜索、图像描述生成、图像问答（给定图像和问题，输出答案）等。 2,语音处理完整的语音系统包括前端的信号处理、中间的语音语义识别和对话管理（更多涉及自然语言处理）、以及后期的语音合成。 语音的前端处理中包含几个模块。说话人声检测：有效地检测说话人声开始和结束时刻, 区分说话人声与背景声；回声消除：当音箱在播放音乐时，为了不暂停音乐而进行有效的语音识别，需要消除来自扬声器的音乐干扰；唤醒词识别：人类与机器交流的触发方式，就像日常生活中需要与其他人说话时，你会先喊一下那个人的名字；麦克风阵列处理：对声源进行定位，增强说话人方向的信号、抑制其他方向的噪音信号；语音增强：对说话人语音区域进一步增强,、环境噪声区域进一步抑制,有效降低远场语音的衰减。 语音识别的过程需要经历特征提取、模型自适应、声学模型、语言模型、动态解码等多个过程。除了前面提到的远场识别问题之外，还有许多前沿研究集中在解决“鸡尾酒会问题”。 考虑到语义识别和对话管理环节更多是属于自然语言处理的范畴，剩下的就是语音合成环节。语音合成的几个步骤包括：文本分析、语言学分析、音长估算、发音参数估计等。 3,自然语言处理NLP包括知识的获取与表达、自然语言理解、自然语言生成等等，也相应出现了知识图谱、对话管理、机器翻译等研究方向，与前述的处理环节形成多对多的映射关系。 知识图谱是基于语义层面对知识进行组织后得到的结构化结果，可以用来回答简单事实类的问题。 包括语言知识图谱（词义上下位、同义词等）、常识知识图谱（“鸟会飞但兔子不会飞”）、实体关系图谱（“刘德华的妻子是朱丽倩”）。知识图谱的构建过程其实就是获取知识、表示知识、应用知识的过程。 语义理解是自然语言处理中的最大难题，以中文为例，这里面需要解决4个困难:首先是歧义消除，包括词语层面、短语层面、句子层面的的歧义；其次是上下文关联性，例如“小明欺负小李，所以我批评了他。”，需要依靠上下文才知道我批评的是调皮的小明；第三是意图识别，“晴天”可以指天气也可以指周杰伦的歌最后一块是情感识别，显性与隐性的情感识别（“我不高兴”和“我考试没考好”都是用户在表示心情低落）。 目前对话管理主要包含三种情形，按照涉及知识的通用到专业，依次是闲聊、问答、任务驱动型对话。]]></content>
+      <categories>
+        <category>归纳总结</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关系抽取研究现状]]></title>
+    <url>%2F2018%2F05%2F26%2F%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96%E7%A0%94%E7%A9%B6%E7%8E%B0%E7%8A%B6%2F</url>
+    <content type="text"><![CDATA[关系抽取就是从文本中识别实体并抽取实体之间的语义关系。 关系抽取的方法有以下三类：1,有监督的学习方法：根据已有数据训练分类器，用训练好的分类器预测关系。有监督的学习方法缺点是需要大量人工标注的语料。2,半监督的学习方法：主要是用Bootstrapping进行关系抽取。对要抽取的关系首先手工设定若干种子实例，然后迭代地从数据中抽取关系对应的关系模板和更多的实例。3,无监督的学习方法：假设拥有相同语义关系的实体对拥有相似的上下文信息。故可以利用每个实体对对应上下文信息来代表该实体对的语义关系，并对所有实体对的语义关系进行聚类。 有监督学习与远程监督有监督学习的不足是需要大量人工标注的训练数据，但是人工标注训练数据需要花费大量时间和精力。基于此，Mintz在2009年提出了远程监督（Distant Supervision）的思想。这篇论文将纽约时报新闻文本和大规模知识图谱Freebase(包含7300多个关系和超过9亿的实体)进行实体对齐。远程监督假设，一个同时包含两个实体的句子蕴含了该实体对在 Freebase 中的关系，并将该句子作为该实体对所对应关系的训练正例。论文在远程监督标注的数据上提取文本特征并训练关系分类模型，有效解决了关系抽取的标注数据规模问题。 远程监督的思想假设的是一个实体只对应一种关系。但是，很多实体之间具有多种关系。因此Hoffmann在2011年提出了采用多实例多标签方法来对关系抽取进行建模，刻画一个实体对可能存在多种关系的情况。 基于深度学习的关系抽取Socher在2012年开始使用递归神经网络来解决关系抽取问题，这篇论文首先对句子进行句法解析，然后为句法树上的每个节点学习向量表示。通过递归神经网络，可以从句法树最低端的词向量开始，按照句子的句法结构迭代合并，最终得到该句子的向量表示，并用于关系分类。该方法能够有效考虑句子的句法结构信息，但是无法考虑两个实体在句子中的位置和语义信息。 Zeng在2014年提出用卷积神经网络进行关系抽取。论文此阿勇词汇向量和词的位置向量作为卷积神经网络的输入，通过卷积层、池化层和非线性层得到句子表示。通过考虑实体的位置向量和其他相关的词汇特征，句子中的实体信息能够被较好地考虑到关系抽取中。 Miwa在2016年提出一种端到端神经网络的关系抽取模型。该模型采用BiLSTM和树形LSTM同时对句子和实体进行建模。 与之前基于特征的关系抽取系统类似，神经网络关系抽取模型也面临着人工标注数据较少的问题。对此，Zeng在2015年尝试将基于卷积神经网络的关系抽取模型扩展到远程监督数据上。Zeng假设每个实体对的所有句子中至少存在一个句子反映该实体对的关系，提出了一种新的学习框架：以实体对为单位，对于每个实体对只考虑最能反映其关系的那个句子。该方法在一定程度上解决了神经网络关系抽取模型在远程监督数据上的应用，在NYT10 数据集上取得了远远高于基于特征的关系抽取模型的预测效果。但是，该方法仍然存在一定的缺陷：该模型对于每个实体对只能选用一个句子进行学习和预测， 损失了来自其他大量的有效句子的信息。 有没有可能把实体对对应的有噪音的句子过滤掉，然后利用所有有效句子进行学习和预测呢？ Lin在2016年提出了一种基于句子级别注意力机制的神经网络模型来解决这个问题，该方法能够根据特定关系为实体对的每个句子分配权重，通过不断学习能够使有效句子获得较高的权重， 而有噪音的句子获得较小的权重。 总结1,基于句法树的树形LSTM神经网络模型在关系抽取上取得了不错的效果，说明句法信息对关系抽取有一定的帮助，但是目前句法分析仍然存在很多的错误。如果对一个句子考虑多种句法分析树，把这些句法分析树的结果进行整合，准确率也会得到很大的提升。2,目前神经网络的方法主要基于预设的关系集合，而如何面对开放领域进行关系提取，也有很大的限制。所以如何将神经网络引入开放领域的关系提取，自动发现新的关系及事实是一个值得探索的问题。3,目前的关系提取主要基于单语言文本。但是文本这是信息表示的方式之一，如何利用多语言文本、图像和音频信息进行关系提取也是值得思考的问题。 参考文献Mintz, Mike, Steven Bills, Rion Snow, and Dan Jurafsky. “Distant supervisionfor relation extraction without labeled data.” In Proceedings of ACL-IJCNLP, 2009. Hoffmann, Raphael, Congle Zhang, Xiao Ling, Luke Zettlemoyer, and Daniel S.Weld. “Knowledge-based weak supervision for information extraction ofoverlapping relations.” In Proceedings of ACL-HLT, 2011. Socher, Richard, et al. “Semantic compositionality through recursivematrix-vector spaces.” Proceedings of EMNLP-CoNLL, 2012 Daojian Zeng, Kang Liu, Siwei Lai, Guangyou Zhou, and Jun Zhao. Relation classification via convolutional deep neural network. In Proceedings of COLING. Makoto Miwa, Mohit Bansa. “End-to-End Relation Extraction using LSTMs onSequences and Tree Structures” In Proceedings of ACL, 2016. Daojian Zeng,Kang Liu,Yubo Chen,and Jun Zhao. Distant supervision for relation extraction via piecewise convolutional neural networks. In Proceedings of EMNLP.]]></content>
+      <categories>
+        <category>归纳总结</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1219组会小结]]></title>
+    <url>%2F2017%2F12%2F20%2F1219%E7%BB%84%E4%BC%9A%E5%B0%8F%E7%BB%93-1%2F</url>
+    <content type="text"><![CDATA[一, CV交叉验证的方差用处不大;二, 句子padding 0的时候mask参数的选择,LSTM和CNN不同;三, 训练不要划分验证集，全部数据都拿来训练，dev-set来验证；四, 分词器(tokenizer)选择:(1)nltk三个123from nltk.tokenize import TweetTokenizerfrom nltk.tokenize import StanfordTokenizerfrom nltk.tokenize import word_tokenize (2)HappyTokenizing,这里https://github.com/dlatk/happierfuntokenizing(3)TweetNLP (Owoputi et al., 2013) http://www.cs.cmu.edu/~ark/TweetNLP/(4)自己手动写，根据数据集特征。五, 分词考虑: url, http, @ 等;六, 词向量考虑:推特-Glove,fasttext基本用来分类,w2v普遍适用,emoji-embedding;六, MultiTask-learning思想:同时对多个任务学习不同的回归函数。七,adam优化器比sgd收敛快？]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>开会记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[梯度下降优化算法]]></title>
     <url>%2F2017%2F12%2F09%2F%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%2F</url>
     <content type="text"></content>
