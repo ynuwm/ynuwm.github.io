@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ynuwm.github.io/"/>
-  <updated>2018-06-05T14:34:50.000Z</updated>
+  <updated>2018-10-27T00:22:29.000Z</updated>
   <id>http://ynuwm.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>你为什么不开心了</title>
+    <link href="http://ynuwm.github.io/2018/10/27/%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%BC%80%E5%BF%83%E4%BA%86/"/>
+    <id>http://ynuwm.github.io/2018/10/27/你为什么不开心了/</id>
+    <published>2018-10-27T00:08:59.000Z</published>
+    <updated>2018-10-27T00:22:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我慢慢明白了为什么我不快乐<br>因为我总是期待一个结果<br>看一本书期待它让我变得深刻<br>吃饭游泳期待它让我一斤斤瘦下来<br>发一条短信期待它被回复<br>对别人好期待被回待以好<br>写一个故事说一个心情期待被关注被安慰<br>参加一个活动期待换来充实丰富的经历<br>这些预设的期待如果实现了<br>长舒一口气<br>如果没有实现呢<br>自怨自艾<br>可是小时候也是同一个我<br>用一个下午的时间看蚂蚁搬家……</p>
+<p>虚度不是荒废<br>是对紧绷日子的对抗和调和<br>虚度就是做些无用的小事<br>取悦自己<br>当有一天<br>我们开始卸下心上纷纷的欲念<br>才能与本真快乐的另一个自己相逢<br>才能重新发现这珍贵的人间</p>
+<p>————马德《允许自己虚度时光》</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我慢慢明白了为什么我不快乐&lt;br&gt;因为我总是期待一个结果&lt;br&gt;看一本书期待它让我变得深刻&lt;br&gt;吃饭游泳期待它让我一斤斤瘦下来&lt;br&gt;发一条短信期待它被回复&lt;br&gt;对别人好期待被回待以好&lt;br&gt;写一个故事说一个心情期待被关注被安慰&lt;br&gt;参加一个活动期待换来充实丰富的经历
+    
+    </summary>
+    
+      <category term="日记" scheme="http://ynuwm.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="开心" scheme="http://ynuwm.github.io/tags/%E5%BC%80%E5%BF%83/"/>
+    
+  </entry>
   
   <entry>
     <title>白色满天星</title>
@@ -928,30 +953,6 @@
     
     
       <category term="开会记录" scheme="http://ynuwm.github.io/tags/%E5%BC%80%E4%BC%9A%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习和神经网络－吴恩达2017</title>
-    <link href="http://ynuwm.github.io/2017/09/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%92%8C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%8D%E5%90%B4%E6%81%A9%E8%BE%BE2017/"/>
-    <id>http://ynuwm.github.io/2017/09/09/深度学习和神经网络－吴恩达2017/</id>
-    <published>2017-09-09T13:47:45.000Z</published>
-    <updated>2017-12-01T09:03:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="第一周-深度学习概论"><a href="#第一周-深度学习概论" class="headerlink" title="第一周　深度学习概论"></a>第一周　深度学习概论</h1><h2 id="欢迎来到深度学习工程微专业"><a href="#欢迎来到深度学习工程微专业" class="headerlink" title="欢迎来到深度学习工程微专业"></a>欢迎来到深度学习工程微专业</h2><h2 id="什么是神经网络"><a href="#什么是神经网络" class="headerlink" title="什么是神经网络"></a>什么是神经网络</h2><h2 id="用神经网络进行监督学习"><a href="#用神经网络进行监督学习" class="headerlink" title="用神经网络进行监督学习"></a>用神经网络进行监督学习</h2><h2 id="为什么深度学习会兴起"><a href="#为什么深度学习会兴起" class="headerlink" title="为什么深度学习会兴起"></a>为什么深度学习会兴起</h2><h2 id="关于这门课"><a href="#关于这门课" class="headerlink" title="关于这门课"></a>关于这门课</h2><p><img src="/2017/09/09/深度学习和神经网络－吴恩达2017/0001.jpg" alt="img"></p>
-<p><img src="/2017/09/09/深度学习和神经网络－吴恩达2017/0000.jpg" alt="img"></p>
-<h1 id="第二周-神经网络基础"><a href="#第二周-神经网络基础" class="headerlink" title="第二周　神经网络基础"></a>第二周　神经网络基础</h1><h2 id="二分分类"><a href="#二分分类" class="headerlink" title="二分分类"></a>二分分类</h2><h2 id="logistic-回归"><a href="#logistic-回归" class="headerlink" title="logistic 回归"></a>logistic 回归</h2><h2 id="logistic-回归损失函数"><a href="#logistic-回归损失函数" class="headerlink" title="logistic 回归损失函数"></a>logistic 回归损失函数</h2><h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><h2 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h2><h2 id="更多导数的例子"><a href="#更多导数的例子" class="headerlink" title="更多导数的例子"></a>更多导数的例子</h2><h2 id="计算图"><a href="#计算图" class="headerlink" title="计算图"></a>计算图</h2><h2 id="计算图的导数计算"><a href="#计算图的导数计算" class="headerlink" title="计算图的导数计算"></a>计算图的导数计算</h2><h2 id="logistic-回归中的梯度下降法"><a href="#logistic-回归中的梯度下降法" class="headerlink" title="logistic 回归中的梯度下降法"></a>logistic 回归中的梯度下降法</h2><h2 id="m个样本的梯度下降"><a href="#m个样本的梯度下降" class="headerlink" title="m个样本的梯度下降"></a>m个样本的梯度下降</h2><h2 id="向量化"><a href="#向量化" class="headerlink" title="向量化"></a>向量化</h2><h2 id="向量化的更多例子"><a href="#向量化的更多例子" class="headerlink" title="向量化的更多例子"></a>向量化的更多例子</h2><h2 id="向量化logistic-回归"><a href="#向量化logistic-回归" class="headerlink" title="向量化logistic 回归"></a>向量化logistic 回归</h2><h2 id="向量化logistic-回归的梯度输出"><a href="#向量化logistic-回归的梯度输出" class="headerlink" title="向量化logistic 回归的梯度输出"></a>向量化logistic 回归的梯度输出</h2><h2 id="python中的广播"><a href="#python中的广播" class="headerlink" title="python中的广播"></a>python中的广播</h2><h2 id="关于Python-Numpy-向量的说明"><a href="#关于Python-Numpy-向量的说明" class="headerlink" title="关于Python/Numpy 向量的说明"></a>关于Python/Numpy 向量的说明</h2><h2 id="Jupyter-Ipython笔记本的快速指南"><a href="#Jupyter-Ipython笔记本的快速指南" class="headerlink" title="Jupyter/Ipython笔记本的快速指南"></a>Jupyter/Ipython笔记本的快速指南</h2><h2 id="选修-logistic-损失函数的解释"><a href="#选修-logistic-损失函数的解释" class="headerlink" title="(选修)logistic 损失函数的解释"></a>(选修)logistic 损失函数的解释</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;第一周-深度学习概论&quot;&gt;&lt;a href=&quot;#第一周-深度学习概论&quot; class=&quot;headerlink&quot; title=&quot;第一周　深度学习概论&quot;&gt;&lt;/a&gt;第一周　深度学习概论&lt;/h1&gt;&lt;h2 id=&quot;欢迎来到深度学习工程微专业&quot;&gt;&lt;a href=&quot;#欢迎来到深度学习
-    
-    </summary>
-    
-      <category term="深度学习" scheme="http://ynuwm.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="神经网络，机器学习" scheme="http://ynuwm.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%8C%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
