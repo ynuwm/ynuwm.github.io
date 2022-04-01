@@ -15,6 +15,7 @@
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
+  <!-- 注释
   <entry>
     <title>作息时间</title>
     <link href="http://ynuwm.github.io/2018/11/15/%E4%BD%9C%E6%81%AF%E6%97%B6%E9%97%B4/"/>
@@ -42,7 +43,7 @@
       <category term="时间" scheme="http://ynuwm.github.io/tags/%E6%97%B6%E9%97%B4/"/>
     
   </entry>
-  
+  -->
   <entry>
     <title>你为什么不开心了</title>
     <link href="http://ynuwm.github.io/2018/10/27/%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%BC%80%E5%BF%83%E4%BA%86/"/>
